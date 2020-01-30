@@ -1,17 +1,26 @@
 {
-  "name": "reactNativeContactActionSheet",
+  "name": "react-native-contact-action-sheet",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "React Native Action Sheet for Email and Phone Number contacts",
+  "repository": "https://github.com/jefelewis/react-native-contact-action-sheet",
+  "author": "Jeff Lewis",
+  "license": "MIT",
+  "keywords": [
+    "react-native",
+    "component-library",
+    "apple",
+    "ios",
+    "android",
+    "contact",
+    "email",
+    "phone-number",
+    "action-sheet",
+    "actionsheet"
+  ],
   "dependencies": {
-    "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native-custom-actionsheet": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -26,8 +35,14 @@
     "eslint": "^6.5.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
     "react-test-renderer": "16.9.0",
     "typescript": "^3.7.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   },
   "jest": {
     "preset": "react-native",
@@ -39,5 +54,8 @@
       "json",
       "node"
     ]
-  }
+  },
+  "files": [
+    "dist/"
+  ]
 }
