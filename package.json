@@ -19,6 +19,14 @@
     "action-sheet",
     "actionsheet"
   ],
+  "scripts": {
+    "build": "tsc",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "react-native-custom-actionsheet": "^0.1.0"
   },
