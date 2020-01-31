@@ -24,7 +24,7 @@
 npm i react-native-contact-action-sheet
 ```
 
-**3. Run Project:**
+**2. Run Project:**
 ```
 react-native run-ios
 ```
@@ -74,7 +74,7 @@ const App = () => {
 
 ## Changelog
 
-### [0.0.1] - 1/29/2020
+### [0.0.2] - 1/30/2020
 
 ***Added***
 
