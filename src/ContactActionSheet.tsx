@@ -1,6 +1,6 @@
 // Imports: Dependencies
 import React, { useState } from 'react';
-import { Button, Dimensions, Platform, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
+import { Button, Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -30,11 +30,8 @@ const ContactActionSheet = (props: Props) => {
   // Toggle Modal
   const toggleModal = () => {
     try {
-      // Check Platform (iOS)
-      if (Platform.OS === 'ios') {
-        // React Hook: Toggle Modal
-        toggle((modalVisible: boolean) => !modalVisible);
-      }
+      // React Hook: Toggle Modal
+      toggle((modalVisible: boolean) => !modalVisible);
     }
     catch (error) {
       console.log(error);
