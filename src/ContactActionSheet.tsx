@@ -11,15 +11,14 @@ const { height, width } = Dimensions.get('window');
 
 // TypeScript: Types
 interface Contact {
-  key: number;
   title: string;
-  type: 'Email' | 'Phone Number';
+  type: 'Email' | 'Phone Number' | string;
   contact: string;
 }
 
 interface Props {
   contactsList: Array<Contact>;
-  callEmail: (contact: Contact) => any | void;
+  callEmail?: (contact: Contact) => any;
 }
 
 // Component: Contact Action Sheet
