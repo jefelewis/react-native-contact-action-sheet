@@ -1,6 +1,6 @@
 // Imports: Dependencies
-import React, { useState } from 'react';
-import { Button, Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -12,30 +12,18 @@ const { height, width } = Dimensions.get('window');
 // TypeScript: Types
 interface Contact {
   title: string;
-  type: 'Email' | 'Phone Number' | string;
+  type: 'Email' | 'Phone Number' | 'Message' | string;
   contact: string;
 }
 
 interface Props {
+  visible: any;
+  toggle: any,
   contactsList: Array<Contact>;
-  callEmail?: (contact: Contact) => any;
 }
 
 // Component: Contact Action Sheet
 const ContactActionSheet = (props: Props) => {
-  // React Hooks: State
-  const [ modalVisible, toggle ] = useState(false);
-
-  // Toggle Modal
-  const toggleModal = () => {
-    try {
-      // React Hook: Toggle Modal
-      toggle((modalVisible: boolean) => !modalVisible);
-    }
-    catch (error) {
-      console.log(error);
-    }
-  };
 
   // Render Contact Selectors
   const renderContactSelectors = (props: Props) => {
@@ -50,7 +38,7 @@ const ContactActionSheet = (props: Props) => {
           if (props.contactsList.length === 1) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
-                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -63,7 +51,7 @@ const ContactActionSheet = (props: Props) => {
           if (props.contactsList.indexOf(contact) === 0) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
-                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -80,7 +68,7 @@ const ContactActionSheet = (props: Props) => {
           ) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelector} onPress={() => callEmail(contact)}>
-                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -93,7 +81,7 @@ const ContactActionSheet = (props: Props) => {
           if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
-                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -112,7 +100,7 @@ const ContactActionSheet = (props: Props) => {
   // Call/Email
   const callEmail = (contact: Contact) => {
     try {
-      // Check If Email
+      // Check Type: Email
       if (contact.type === 'Email') {
 
         // Email Details
@@ -124,14 +112,43 @@ const ContactActionSheet = (props: Props) => {
         Linking.openURL(`mailto:${email}?subject=${subject}&body=${body}`);
       }
 
-      // Check If Phone Number
+      // Check Type: Phone Number
       else if (contact.type === 'Phone Number') {
         // Call Phone Number
         Linking.openURL(`tel:${contact.contact}`);  
       }
 
+      // Check Type: Message
+      else if (contact.type === 'Message') {
+        // Call Phone Number
+        Linking.openURL(`sms:${contact.contact}`);  
+      }
+
       // Toggle Modal
-      toggleModal();
+      props.toggle();
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Render Icon
+  const renderIcon = (contact: Contact) => {
+    try {
+      // Type: Email
+      if (contact.type === 'Email') {
+        return 'ios-mail';
+      }
+
+      // Type: Phone Number
+      if (contact.type === 'Phone Number') {
+        return 'ios-call';
+      }
+
+      // Type: Message
+      if (contact.type === 'Message') {
+        return 'ios-text';
+      }      
     }
     catch (error) {
       console.log(error);
@@ -140,23 +157,17 @@ const ContactActionSheet = (props: Props) => {
 
   return (
     <View style={styles.container}>
-      <Button
-        title="Show Modal"
-        onPress={() => toggleModal()}
-      />
-
       <Modal
-        isVisible={modalVisible}
+        isVisible={props.visible}
         style={styles.modal}
         backdropOpacity={.30}
-        // onBackdropPress={() => alert('Fuck')}
       >
         <View style={styles.modalContainer}>
           <View style={styles.contactListContainer}>
             {renderContactSelectors(props)}
           </View>
 
-          <TouchableOpacity onPress={() => toggleModal()} style={styles.cancelButtonContainer}>
+          <TouchableOpacity onPress={() => props.toggle()} style={styles.cancelButtonContainer}>
             <Text style={styles.cancelText}>Cancel</Text>
           </TouchableOpacity>
         </View>
@@ -248,7 +259,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: width - 20,
     height: 60,
-    // backgroundColor: isDarkMode ? '#000' : '#FFFFFF',
     backgroundColor: '#FFFFFF',
     ...ifIphoneX({
       marginBottom: 35,
