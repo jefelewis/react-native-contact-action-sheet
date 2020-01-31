@@ -53,7 +53,7 @@ import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
 
 // Imports: Components
-import ContactActionSheet from './src/ContactActionSheet';
+import { ContactActionSheet }  from 'react-native-contact-action-sheet';
 
 // React Native App
 const App = () => {
