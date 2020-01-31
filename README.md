@@ -7,6 +7,8 @@
 *  [Pending Items](#pending-items)
 *  [Getting Started](#getting-started)
 *  [Example Code](#example-code)
+*  [Screenshot (iOS)](#screenshot-ios)
+*  [Screenshot (Android)](#screenshot-android)
 *  [Changelog](#changelog)
 
 ## Built With
@@ -19,6 +21,8 @@
 - [ ] 
 
 ## Getting Started
+**Note:** Maximum of 6 Phone Numbers and Emails Total allowed.
+
 **1. Install Package:**
 ```
 npm i react-native-contact-action-sheet
@@ -28,6 +32,17 @@ npm i react-native-contact-action-sheet
 ```
 react-native run-ios
 ```
+
+
+## Screenshot (iOS)
+<div align="center">
+  <img src="/screenshots/ios/iosActionSheet.gif" width="40%" height="40%" />
+</div>
+
+## Screenshot (Android)
+<div align="center">
+  <img src="/screenshots/android/androidActionSheet.gif" width="40%" height="40%" />
+</div>
 
 
 ## Example Code
@@ -42,24 +57,24 @@ const App = () => {
   // Contacts
   const contacts = [
     {
-      title: 'Building Department',
+      title: 'Company Headquarters',
       type: 'Phone Number',
       contact: '(555) 555-5555',
     },
     {
-      title: 'City Clerk',
+      title: 'Retail Store',
       type: 'Phone Number',
       contact: '(777) 777-7777',
     },
     {
-      title: 'Building Department',
+      title: 'Company Headquarters',
       type: 'Email',
-      contact: 'building@city.com',
+      contact: 'hq@company.com',
     },
     {
-      title: 'City Clerk',
+      title: 'Retail Store',
       type: 'Email',
-      contact: 'cityclerk@city.com',
+      contact: 'store@company.com',
     },
   ];
 
@@ -78,8 +93,10 @@ const App = () => {
 
 ***Added***
 
-- 
+- Adding Android Support.
+- Adding iPhone X/11 Support.
+- Adding screenshots.
 
 ***Changed***
 
-- 
+- Styling changes.
