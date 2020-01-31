@@ -1,8 +1,7 @@
 // Imports: Dependencies
 import React, { useState } from 'react';
-import { ActionSheetIOS, Button, Dimensions, Platform, StyleSheet, Text, View, Linking, TouchableOpacity, Alert } from 'react-native';
+import { ActionSheetIOS, Button, Dimensions, Platform, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
-import { ActionSheetCustom } from 'react-native-custom-actionsheet';
 import Icon from 'react-native-vector-icons/Ionicons';
 Icon.loadFont();
 
@@ -11,23 +10,16 @@ const { height, width } = Dimensions.get('window');
 
 // TypeScript: Types
 interface Contact {
+  key: number;
   title: string;
   type: 'Email' | 'Phone Number';
   contact: string;
 }
 
 interface Props {
-  contactsList: Array<Contact>,
+  contactsList: Array<Contact>;
+  callEmail: (contact: Contact) => any | void;
 }
-
-
-
-
-// interface Props {
-//   title?: string;
-//   mode: 'calendar' | 'spinner' | 'default';
-//   onChange: (date: Date | string) => Date | string | void;
-// }
 
 // Component: Contact Action Sheet
 const ContactActionSheet = (props: Props) => {
@@ -36,32 +28,6 @@ const ContactActionSheet = (props: Props) => {
   const [ selected, selectContact ] = useState(false);
 
   // React Hooks: Lifecycle Methods
-
-  // Toggle Modal
-  const toggleModal = () => {
-    try {
-      // Check Platform (iOS)
-      if (Platform.OS === 'ios') {
-        // React Hook: Toggle Modal
-        toggle((modalVisible: boolean) => !modalVisible);
-      }
-    }
-    catch (error) {
-      console.log(error);
-    }
-  };
-  
-  let actionSheet: any = null;
-  const showCustomActionSheet = () => {
-    actionSheet.show();
-  };
- 
-  const getActionSheetRef = (ref: any) => {
-    actionSheet = ref;
-  };
- 
-  const handlePress = (index: any) => selectContact(index);
-
 
   // Native Action Sheet
   const showActionSheet = () => {
@@ -78,66 +44,19 @@ const ContactActionSheet = (props: Props) => {
     );
   };
 
-  // Press Call
-  const pressCall = (phoneNumber: string) => {
+  // Toggle Modal
+  const toggleModal = () => {
     try {
-      // Call Phone Number
-      Linking.openURL(`tel:${phoneNumber}`);
+      // Check Platform (iOS)
+      if (Platform.OS === 'ios') {
+        // React Hook: Toggle Modal
+        toggle((modalVisible: boolean) => !modalVisible);
+      }
     }
     catch (error) {
       console.log(error);
     }
   };
-
-  const CANCEL_INDEX = 0
-  const DESTRUCTIVE_INDEX = 4
-  const options = [
-    'Cancel',
-    'Test #1',
-    'Test #2',
-    'Test #3',
-    // {
-    //   component: <View style={{ display: 'flex', flexDirection: 'row', width: width - 32, alignItems: 'center' }}>
-    //       <Icon name="ios-call" size={28} style={{ marginLeft: 16, marginRight: 24 }} color="#323232"></Icon>
-    //       <View>
-    //         <Text style={{ fontFamily: 'System', fontSize: 17, fontWeight: '500', marginBottom: 4, color: '#323232' }}>Building Department</Text>
-    //         <Text style={{ fontFamily: 'System', fontSize: 15, fontWeight: '400', color: '#7D7D7D' }}>(555) 555-5555</Text>
-    //       </View>
-    //     </View>,
-    //   height: 70,
-    // },
-    // {
-    //   component: <View style={{ display: 'flex', flexDirection: 'row', width: width - 32, alignItems: 'center' }}>
-    //       <Icon name="ios-call" size={28} style={{ marginLeft: 16, marginRight: 24 }} color="#323232"></Icon>
-    //       <View>
-    //         <Text style={{ fontFamily: 'System', fontSize: 17, fontWeight: '500', marginBottom: 4, color: '#323232' }}>City Clerk</Text>
-    //         <Text style={{ fontFamily: 'System', fontSize: 15, fontWeight: '400', color: '#7D7D7D' }}>(777) 777-7777</Text>
-    //       </View>
-    //     </View>,
-    //   height: 70,
-    // },
-    // {
-    //   component: <View style={{ display: 'flex', flexDirection: 'row', width: width - 32, alignItems: 'center' }}>
-    //       <Icon name="ios-mail" size={28} style={{ marginLeft: 16, marginRight: 24 }} color="#323232"></Icon>
-    //       <View>
-    //         <Text style={{ fontFamily: 'System', fontSize: 17, fontWeight: '500', marginBottom: 4, color: '#323232' }}>Building Department</Text>
-    //         <Text style={{ fontFamily: 'System', fontSize: 15, fontWeight: '400', color: '#7D7D7D' }}>building@city.com</Text>
-    //       </View>
-    //     </View>,
-    //   height: 70,
-    // },
-    // {
-    //   component: <View style={{ display: 'flex', flexDirection: 'row', width: width - 32, alignItems: 'center' }}>
-    //       <Icon name="ios-mail" size={28} style={{ marginLeft: 16, marginRight: 24 }} color="#323232"></Icon>
-    //       <View>
-    //         <Text style={{ fontFamily: 'System', fontSize: 17, fontWeight: '500', marginBottom: 4, color: '#323232' }}>City Clerk</Text>
-    //         <Text style={{ fontFamily: 'System', fontSize: 15, fontWeight: '400', color: '#7D7D7D' }}>cityclerk@city.com</Text>
-    //       </View>
-    //     </View>,
-    //   height: 70,
-    // },
-  ];
-
 
   // Render Contact Selectors
   const renderContactSelectors = (props: Props) => {
@@ -147,13 +66,16 @@ const ContactActionSheet = (props: Props) => {
       }
       else {
         return props.contactsList.map((contact: Contact) => {
-          // IF/ELSE FOR EMAIL/PHONE NUMBER
-          // return (
-            <View style={styles.contactSelector}>
-              <Text>{contact.title}</Text>
-              <Text>{contact.contact}</Text>
-            </View>
-          // );
+          // IF/ELSE FOR EMAIL/PHONE NUMBER???
+          return (
+            <TouchableOpacity key={contact.key} style={styles.contactSelector} onPress={() => callEmail(contact)}>
+              <Icon name="ios-call" size={28} style={styles.icon} color="#323232"></Icon>
+              <View>
+                <Text style={styles.contactTitle}>{contact.title}</Text>
+                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+              </View>
+            </TouchableOpacity>
+          );
         });
       }
     }
@@ -162,18 +84,37 @@ const ContactActionSheet = (props: Props) => {
     }
   };
 
+  // Call/Email
+  const callEmail = (contact: Contact) => {
+    try {
+      // Check If Email
+      if (contact.type === 'Email') {
+
+        // Email Details
+        let email = `${contact.contact}`;
+        let subject = `${contact.title}`;
+        let body = '';
+  
+        // Send Email
+        Linking.openURL(`mailto:${email}?subject=${subject}&body=${body}`);
+      }
+
+      // Check If Phone Number
+      else if (contact.type === 'Phone Number') {
+        // Call Phone Number
+        Linking.openURL(`tel:${contact.contact}`);  
+      }
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <View style={styles.container}>
-      {/* <Text>Hi</Text> */}
-
       <Button
         title="Show Native Action Sheet"
         onPress={showActionSheet}
-      />
-
-      <Button
-        title="Show Custom Action Sheet"
-        onPress={showCustomActionSheet}
       />
 
       <Button
@@ -181,33 +122,15 @@ const ContactActionSheet = (props: Props) => {
         onPress={() => toggleModal()}
       />
 
-      <ActionSheetCustom
-        ref={getActionSheetRef}
-        // title={'null'}
-        // message="custom message custom message custom message custom message custom message custom message "
-        options={options}
-        cancelButtonIndex={CANCEL_INDEX}
-        destructiveButtonIndex={DESTRUCTIVE_INDEX}
-        onPress={handlePress}
-        style={styles.actionSheetContainer}
-      />
-
       <Modal
         isVisible={modalVisible}
         style={styles.modal}
         backdropOpacity={.30}
-        onBackdropPress={() => alert('Fuck')}
+        // onBackdropPress={() => alert('Fuck')}
       >
         <View style={styles.modalContainer}>
           <View style={styles.contactListContainer}>
-            {/* {renderContactSelectors(props)} */}
-            <TouchableOpacity style={styles.contactSelector}>
-              <Icon name="ios-call" size={28} style={styles.icon} color="#323232"></Icon>
-              <View>
-                <Text style={styles.contactTitle}>{props.contactsList[0].title}</Text>
-                <Text style={styles.emailPhone} numberOfLines={1}>{props.contactsList[0].contact}</Text>
-              </View>
-            </TouchableOpacity>
+            {renderContactSelectors(props)}
           </View>
 
           <TouchableOpacity onPress={() => toggleModal()} style={styles.cancelButtonContainer}>
