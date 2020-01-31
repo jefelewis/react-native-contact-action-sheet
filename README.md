@@ -48,7 +48,6 @@ react-native run-ios
 ## Example Code
 ```javascript
 // Imports: Dependencies
-// Imports: Dependencies
 import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
 
@@ -122,6 +121,12 @@ export default App;
 
 
 ## Changelog
+
+### [0.0.5] - 1/31/2020
+
+***Changed***
+
+- Fixing README example code.
 
 ### [0.0.3] - 1/31/2020
 
