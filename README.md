@@ -50,6 +50,7 @@ react-native run-ios
 // Imports: Dependencies
 import React from 'react';
 import { SafeAreaView } from 'react-native';
+import { ContactActionSheet } from 'react-native-contact-action-sheet';
 
 // React Native App
 const App = () => {
