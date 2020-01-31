@@ -1,7 +1,7 @@
 # React Native Contact Action Sheet
 
-[![npm version](https://badge.fury.io/js/react-native-ultimate-modal-picker.svg)](https://badge.fury.io/js/react-native-contact-action-sheet)
-[![npm downloads](https://img.shields.io/npm/dm/react-native-ultimate-modal-picker.svg?style=flat-square)](https://www.npmjs.com/package/react-native-contact-action-sheet)
+[![npm version](https://badge.fury.io/js/react-native-contact-action-sheet.svg)](https://badge.fury.io/js/react-native-contact-action-sheet)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-contact-action-sheet.svg)](https://www.npmjs.com/package/react-native-contact-action-sheet)
 
 *  [Built With](#built-with)
 *  [Pending Items](#pending-items)
