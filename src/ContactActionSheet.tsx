@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ActionSheetIOS, Button, Dimensions, Platform, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/Ionicons';
 Icon.loadFont();
 
@@ -25,21 +26,6 @@ interface Props {
 const ContactActionSheet = (props: Props) => {
   // React Hooks: State
   const [ modalVisible, toggle ] = useState(false);
-
-  // Native Action Sheet
-  const showActionSheet = () => {
-    ActionSheetIOS.showActionSheetWithOptions(
-      {
-        options: ['Cancel', 'Call (Building Department)', 'Call (City Clerk)', 'Email (Building Department)', 'Email (City Clerk)'],
-        cancelButtonIndex: 0,
-      },
-      (buttonIndex) => {
-        if (buttonIndex === 1) {
-          /* destructive action */
-        }
-      },
-    );
-  };
 
   // Toggle Modal
   const toggleModal = () => {
@@ -159,11 +145,6 @@ const ContactActionSheet = (props: Props) => {
   return (
     <View style={styles.container}>
       <Button
-        title="Show Native Action Sheet"
-        onPress={showActionSheet}
-      />
-
-      <Button
         title="Show Modal"
         onPress={() => toggleModal()}
       />
@@ -248,8 +229,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    marginLeft: 16,
-    marginRight: 24,
+    marginLeft: 25,
+    marginRight: 25,
   },
   contactTitle: {
     fontFamily: 'System',
@@ -257,7 +238,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginBottom: 4,
     color: '#323232',
-    width: width - 20 - 20 - 50,
+    width: width - 20 - 20 - 60,
   },
   emailPhone: {
     fontFamily: 'System',
@@ -272,7 +253,12 @@ const styles = StyleSheet.create({
     width: width - 20,
     height: 60,
     backgroundColor: '#FFFFFF',
-    marginBottom: 35,
+    ...ifIphoneX({
+      marginBottom: 35,
+    },
+    {
+      marginBottom: 10,
+    }),
     borderRadius: 12,
   },
   cancelText: {
@@ -282,7 +268,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   actionSheetContainer: {
-    // paddingBottom: 40
     borderWidth: 2,
     borderColor: 'green',
     backgroundColor: 'red',
