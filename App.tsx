@@ -12,24 +12,24 @@ const App = () => {
   // Contacts
   const contacts = [
     {
-      title: 'Building Department',
+      title: 'Company Headquarters',
       type: 'Phone Number',
       contact: '(555) 555-5555',
     },
     {
-      title: 'City Clerk',
+      title: 'Retail Store',
       type: 'Phone Number',
       contact: '(777) 777-7777',
     },
     {
-      title: 'Building Department',
+      title: 'Company Headquarters',
       type: 'Email',
-      contact: 'building@city.com',
+      contact: 'hq@company.com',
     },
     {
-      title: 'City Clerk',
+      title: 'Retail Store',
       type: 'Email',
-      contact: 'cityclerk@city.com',
+      contact: 'store@company.com',
     },
   ];
 
