@@ -1,6 +1,6 @@
 // Imports: Dependencies
 import React, { useState } from 'react';
-import { ActionSheetIOS, Button, Dimensions, Platform, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
+import { Button, Dimensions, Platform, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -49,11 +49,11 @@ const ContactActionSheet = (props: Props) => {
       }
       else {
         // Map Contacts List To Contact Selector
-        return props.contactsList.map((contact: Contact) => {
+        return props.contactsList.map((contact: Contact, index: number) => {
           // Render Single Contact List
           if (props.contactsList.length === 1) {
             return (
-              <TouchableOpacity key={contact.key} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
+              <TouchableOpacity key={index} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
                 <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -66,7 +66,7 @@ const ContactActionSheet = (props: Props) => {
           // Render First Index
           if (props.contactsList.indexOf(contact) === 0) {
             return (
-              <TouchableOpacity key={contact.key} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
+              <TouchableOpacity key={index} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
                 <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -83,7 +83,7 @@ const ContactActionSheet = (props: Props) => {
             && props.contactsList.length >= 3
           ) {
             return (
-              <TouchableOpacity key={contact.key} style={styles.contactSelector} onPress={() => callEmail(contact)}>
+              <TouchableOpacity key={index} style={styles.contactSelector} onPress={() => callEmail(contact)}>
                 <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -96,7 +96,7 @@ const ContactActionSheet = (props: Props) => {
           // Render Last Index
           if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
             return (
-              <TouchableOpacity key={contact.key} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
+              <TouchableOpacity key={index} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
                 <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -252,6 +252,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: width - 20,
     height: 60,
+    // backgroundColor: isDarkMode ? '#000' : '#FFFFFF',
     backgroundColor: '#FFFFFF',
     ...ifIphoneX({
       marginBottom: 35,
