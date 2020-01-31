@@ -1,13 +1,25 @@
-
 // Imports: Dependencies
-import React from 'react';
-import { SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { Button, SafeAreaView } from 'react-native';
 
 // Imports: Components
 import ContactActionSheet from './src/ContactActionSheet';
 
 // React Native App
 const App = () => {
+  // React Hooks: State
+  const [ visible, toggle ] = useState(false);
+
+  // Open Action Sheet
+  const openActionSheet = () => {
+    try {
+      // React Hook: Toggle Modal
+      toggle((visible: boolean) => !visible);
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
 
   // Contacts
   const contacts = [
@@ -19,6 +31,11 @@ const App = () => {
     {
       title: 'Retail Store',
       type: 'Phone Number',
+      contact: '(777) 777-7777',
+    },
+    {
+      title: 'Retail Store',
+      type: 'Message',
       contact: '(777) 777-7777',
     },
     {
@@ -35,7 +52,16 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <ContactActionSheet contactsList={contacts} />
+      <Button
+        title="Show Modal"
+        onPress={() => openActionSheet()}
+      />
+  
+      <ContactActionSheet
+        visible={visible}
+        toggle={toggle}
+        contactsList={contacts}
+      />
     </SafeAreaView>
   )
 };
