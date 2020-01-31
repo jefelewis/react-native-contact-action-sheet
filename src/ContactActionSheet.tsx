@@ -38,7 +38,7 @@ const ContactActionSheet = (props: Props) => {
           if (props.contactsList.length === 1) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
-                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -51,7 +51,7 @@ const ContactActionSheet = (props: Props) => {
           if (props.contactsList.indexOf(contact) === 0) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
-                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -68,7 +68,7 @@ const ContactActionSheet = (props: Props) => {
           ) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelector} onPress={() => callEmail(contact)}>
-                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -81,7 +81,7 @@ const ContactActionSheet = (props: Props) => {
           if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
             return (
               <TouchableOpacity key={index} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
-                <Icon name={renderIcon(contact)} size={28} style={styles.icon} color="#323232"></Icon>
+                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
                 <View>
                   <Text style={styles.contactTitle}>{contact.title}</Text>
                   <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
@@ -141,14 +141,18 @@ const ContactActionSheet = (props: Props) => {
       }
 
       // Type: Phone Number
-      if (contact.type === 'Phone Number') {
+      else if (contact.type === 'Phone Number') {
         return 'ios-call';
       }
 
       // Type: Message
-      if (contact.type === 'Message') {
+      else if (contact.type === 'Message') {
         return 'ios-text';
-      }      
+      }
+
+      else {
+        return null;
+      }
     }
     catch (error) {
       console.log(error);
