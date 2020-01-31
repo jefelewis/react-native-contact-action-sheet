@@ -25,9 +25,6 @@ interface Props {
 const ContactActionSheet = (props: Props) => {
   // React Hooks: State
   const [ modalVisible, toggle ] = useState(false);
-  const [ selected, selectContact ] = useState(false);
-
-  // React Hooks: Lifecycle Methods
 
   // Native Action Sheet
   const showActionSheet = () => {
@@ -65,17 +62,63 @@ const ContactActionSheet = (props: Props) => {
         console.warn('Error: Maximum of 6 contacts allowed.');
       }
       else {
+        // Map Contacts List To Contact Selector
         return props.contactsList.map((contact: Contact) => {
-          // IF/ELSE FOR EMAIL/PHONE NUMBER???
-          return (
-            <TouchableOpacity key={contact.key} style={styles.contactSelector} onPress={() => callEmail(contact)}>
-              <Icon name="ios-call" size={28} style={styles.icon} color="#323232"></Icon>
-              <View>
-                <Text style={styles.contactTitle}>{contact.title}</Text>
-                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
-              </View>
-            </TouchableOpacity>
-          );
+          // Render Single Contact List
+          if (props.contactsList.length === 1) {
+            return (
+              <TouchableOpacity key={contact.key} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
+                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <View>
+                  <Text style={styles.contactTitle}>{contact.title}</Text>
+                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          };
+
+          // Render First Index
+          if (props.contactsList.indexOf(contact) === 0) {
+            return (
+              <TouchableOpacity key={contact.key} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
+                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <View>
+                  <Text style={styles.contactTitle}>{contact.title}</Text>
+                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          };
+
+          // Render Middle Indexes
+          if (
+            props.contactsList.indexOf(contact) >= 1
+            && props.contactsList.indexOf(contact) !== props.contactsList.length - 1
+            && props.contactsList.length >= 3
+          ) {
+            return (
+              <TouchableOpacity key={contact.key} style={styles.contactSelector} onPress={() => callEmail(contact)}>
+                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <View>
+                  <Text style={styles.contactTitle}>{contact.title}</Text>
+                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          };
+
+          // Render Last Index
+          if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
+            return (
+              <TouchableOpacity key={contact.key} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
+                <Icon name={contact.type === 'Email' ? 'ios-mail': 'ios-call'} size={28} style={styles.icon} color="#323232"></Icon>
+                <View>
+                  <Text style={styles.contactTitle}>{contact.title}</Text>
+                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }
         });
       }
     }
@@ -104,6 +147,9 @@ const ContactActionSheet = (props: Props) => {
         // Call Phone Number
         Linking.openURL(`tel:${contact.contact}`);  
       }
+
+      // Toggle Modal
+      toggleModal();
     }
     catch (error) {
       console.log(error);
@@ -145,11 +191,7 @@ const ContactActionSheet = (props: Props) => {
 // Styles
 const styles = StyleSheet.create({
   container: {
-    // display: 'flex',
-    // width: width - 32,
-    // marginLeft: 16,
-    // marginRight: 16,
-    // justifyContent: 'center',
+    width: width,
   },
   modal: {
     margin: 0,
@@ -164,11 +206,43 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignItems: 'center',
   },
-  contactSelector: {
+  contactSelectorSingle: {
     width: width - 20,
     height: 65,
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  contactSelectorFirst: {
+    width: width - 20,
+    height: 65,
+    backgroundColor: '#FFFFFF',
+    borderColor: '#7D7D7D',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  contactSelector: {
+    width: width - 20,
+    height: 65,
+    backgroundColor: '#FFFFFF',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: '#7D7D7D',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  contactSelectorLast: {
+    width: width - 20,
+    height: 65,
+    backgroundColor: '#FFFFFF',
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
