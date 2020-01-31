@@ -1,9 +1,9 @@
 {
   "name": "react-native-contact-action-sheet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "description": "React Native Action Sheet for Email and Phone Number contacts",
+  "description": "React Native Contact Action Sheet for Emails and Phone Numbers",
   "repository": "https://github.com/jefelewis/react-native-contact-action-sheet",
   "author": "Jeff Lewis",
   "license": "MIT",
@@ -28,7 +28,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react-native-custom-actionsheet": "^0.1.0",
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-modal": "^11.5.3",
     "react-native-vector-icons": "^6.6.0"
