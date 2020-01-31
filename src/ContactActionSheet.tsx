@@ -205,7 +205,7 @@ const ContactActionSheet = (props: Props) => {
               <Icon name="ios-call" size={28} style={styles.icon} color="#323232"></Icon>
               <View>
                 <Text style={styles.contactTitle}>{props.contactsList[0].title}</Text>
-                <Text style={styles.emailPhone}>{props.contactsList[0].contact}</Text>
+                <Text style={styles.emailPhone} numberOfLines={1}>{props.contactsList[0].contact}</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -260,12 +260,14 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginBottom: 4,
     color: '#323232',
+    width: width - 20 - 20 - 50,
   },
   emailPhone: {
     fontFamily: 'System',
     fontSize: 15,
     fontWeight: '400',
     color: '#7D7D7D',
+    width: width - 20 - 20 - 50,
   },
   cancelButtonContainer: {
     alignItems: 'center',
