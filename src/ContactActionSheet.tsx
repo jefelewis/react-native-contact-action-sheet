@@ -28,7 +28,7 @@ const ContactActionSheet = (props: Props) => {
   // Render Contact Selectors
   const renderContactSelectors = (props: Props) => {
     try {
-      if (props.contactsList.length >= 6) {
+      if (props.contactsList.length > 6) {
         console.warn('Error: Maximum of 6 contacts allowed.');
       }
       else {
@@ -102,7 +102,6 @@ const ContactActionSheet = (props: Props) => {
     try {
       // Check Type: Email
       if (contact.type === 'Email') {
-
         // Email Details
         let email = `${contact.contact}`;
         let subject = `${contact.title}`;
