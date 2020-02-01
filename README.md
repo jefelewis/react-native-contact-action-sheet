@@ -122,11 +122,11 @@ export default App;
 
 ## Changelog
 
-### [0.0.7] - 1/31/2020
+### [0.0.8] - 1/31/2020
 
 ***Changed***
 
-- Fixing React Native Vector Icons linking issue.
+- Fixing React Native Vector Icons linking/peerDependencies issue.
 
 ### [0.0.6] - 1/31/2020
 
