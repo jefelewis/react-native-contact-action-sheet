@@ -122,6 +122,13 @@ export default App;
 
 ## Changelog
 
+### [0.0.6] - 1/31/2020
+
+***Changed***
+
+- Fixing maximum contacts issue.
+- Fixing outDir/dist issue.
+
 ### [0.0.5] - 1/31/2020
 
 ***Changed***
