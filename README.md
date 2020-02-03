@@ -56,6 +56,8 @@ react-native run-ios
 
 
 ## Example Code
+**Functional Component with React Hooks:**
+
 ```javascript
 // Imports: Dependencies
 import React, { useState } from 'react';
@@ -128,6 +130,92 @@ const App = () => {
 // Exports
 export default App;
 ```
+
+**Class Component:**
+```javascript
+// Imports: Dependencies
+import React from 'react';
+import { Button, SafeAreaView } from 'react-native';
+import { ContactActionSheet }  from 'react-native-contact-action-sheet';
+
+// Screen: Class Component
+class ClassComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      visible: false,
+    }
+  }
+
+  // Open Action Sheet
+  openActionSheet = () => {
+    try {
+      // Set State
+      this.setState({
+        visible: !this.state.visible,
+      })
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+    
+  render() {
+    // Contacts
+    const contacts = [
+      {
+        title: 'Company Headquarters',
+        type: 'Phone Number',
+        contact: '(555) 555-5555',
+      },
+      {
+        title: 'Retail Store',
+        type: 'Phone Number',
+        contact: '(777) 777-7777',
+      },
+      {
+        title: 'Retail Store',
+        type: 'Message',
+        contact: '(777) 777-7777',
+      },
+      {
+        title: 'Company Headquarters',
+        type: 'Email',
+        contact: 'hq@company.com',
+      },
+      {
+        title: 'Retail Store',
+        type: 'Email',
+        contact: 'store@company.com',
+      },
+    ];
+
+    return (
+      <SafeAreaView>
+        <Button
+          title="Show Modal"
+          onPress={this.openActionSheet}
+        />
+    
+        <ContactActionSheet
+          visible={this.state.visible}
+          toggle={this.openActionSheet}
+          contactsList={contacts}
+        />
+      </SafeAreaView>
+    )
+  }
+}
+
+// Exports
+export default ClassComponent;
+```
+
+
+
+
+
 
 
 ## Changelog
