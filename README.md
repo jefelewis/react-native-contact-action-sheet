@@ -56,7 +56,7 @@ react-native run-ios
 
 
 ## Example Code
-**Functional Component with React Hooks:**
+**Functional Component (Using React Hooks):**
 
 ```javascript
 // Imports: Dependencies
@@ -66,8 +66,8 @@ import { Button, SafeAreaView } from 'react-native';
 // Imports: Components
 import { ContactActionSheet }  from 'react-native-contact-action-sheet';
 
-// React Native App
-const App = () => {
+// Functional Component
+const FunctionalComponent = () => {
   // React Hooks: State
   const [ visible, toggle ] = useState(false);
 
@@ -131,7 +131,7 @@ const App = () => {
 export default App;
 ```
 
-**Class Component:**
+**Class Component (Using State):**
 ```javascript
 // Imports: Dependencies
 import React from 'react';
