@@ -28,7 +28,17 @@
 npm i react-native-contact-action-sheet
 ```
 
-**2. Run Project:**
+**2. Add pod to ios/Podfile:**
+```
+pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+```
+
+**3. Install Cocoapods:**
+```
+pod install
+```
+
+**4. Run Project:**
 ```
 react-native run-ios
 ```
@@ -122,11 +132,11 @@ export default App;
 
 ## Changelog
 
-### [0.0.8] - 1/31/2020
+### [0.1.0] - 2/3/2020
 
 ***Changed***
 
-- Fixing React Native Vector Icons linking/peerDependencies issue.
+- Fixing React Native Vector Icons podfile issue.
 
 ### [0.0.6] - 1/31/2020
 
