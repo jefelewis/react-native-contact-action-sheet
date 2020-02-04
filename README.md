@@ -213,12 +213,18 @@ export default ClassComponent;
 ```
 
 
-
-
-
-
-
 ## Changelog
+
+### [0.1.1] - 2/4/2020
+
+***Added***
+
+- Adding `formatPhoneNumber` to convert phone number to `15555555555` format.
+
+***Changed***
+
+- Fixing React Native Vector Icons link issue.
+
 
 ### [0.1.0] - 2/3/2020
 
