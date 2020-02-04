@@ -29,7 +29,7 @@ const ContactActionSheet = (props: Props) => {
   const renderContactSelectors = (props: Props) => {
     try {
       if (props.contactsList.length > 6) {
-        console.warn('Error: Maximum of 6 contacts allowed.');
+        console.warn('React-Native-Contact-Action-Sheet Error: Maximum of 6 contacts allowed.');
       }
       else {
         // Map Contacts List To Contact Selector
@@ -97,6 +97,36 @@ const ContactActionSheet = (props: Props) => {
     }
   };
 
+  // Format Phone Number
+  const formatPhoneNumber = (phoneNumber: string) => {
+    try {
+      // Remove Spaces
+      phoneNumber = phoneNumber.replace(/ /g, '');
+  
+      // Remove Special Characters
+      phoneNumber = phoneNumber.replace(/[^a-zA-Z0-9]/g, '');
+  
+      // Add Area Code 1
+      phoneNumber = '1'.concat('', phoneNumber);
+
+      // Check Phone Number Length
+      if (phoneNumber.length > 11) {
+        console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too long.');
+      }
+
+      else if (phoneNumber.length < 11) {
+        console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too short.');
+      }
+
+      else {
+        return phoneNumber;
+      }
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+
   // Call/Email
   const callEmail = (contact: Contact) => {
     try {
@@ -114,13 +144,13 @@ const ContactActionSheet = (props: Props) => {
       // Check Type: Phone Number
       else if (contact.type === 'Phone Number') {
         // Call Phone Number
-        Linking.openURL(`tel:${contact.contact}`);  
+        Linking.openURL(`tel:${formatPhoneNumber(contact.contact)}`);  
       }
 
       // Check Type: Message
       else if (contact.type === 'Message') {
         // Call Phone Number
-        Linking.openURL(`sms:${contact.contact}`);  
+        Linking.openURL(`sms:${formatPhoneNumber(contact.contact)}`);  
       }
 
       // Toggle Modal
