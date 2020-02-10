@@ -2,12 +2,16 @@
 import React from 'react';
 import { Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
+import { useDarkMode } from 'react-native-dark-mode';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/Ionicons';
 Icon.loadFont();
 
 // Screen Dimensions
 const { height, width } = Dimensions.get('window');
+
+// Dark Mode
+// const isDarkMode: boolean = useDarkMode();
 
 // TypeScript: Types
 interface Contact {
@@ -231,6 +235,7 @@ const styles = StyleSheet.create({
     width: width - 20,
     height: 65,
     backgroundColor: '#FFFFFF',
+    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
     borderRadius: 12,
     display: 'flex',
     flexDirection: 'row',
@@ -240,6 +245,7 @@ const styles = StyleSheet.create({
     width: width - 20,
     height: 65,
     backgroundColor: '#FFFFFF',
+    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
     borderColor: '#7D7D7D',
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderTopLeftRadius: 12,
@@ -252,6 +258,7 @@ const styles = StyleSheet.create({
     width: width - 20,
     height: 65,
     backgroundColor: '#FFFFFF',
+    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -262,6 +269,7 @@ const styles = StyleSheet.create({
     width: width - 20,
     height: 65,
     backgroundColor: '#FFFFFF',
+    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
     display: 'flex',
