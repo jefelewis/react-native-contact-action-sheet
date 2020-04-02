@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "description": "React Native Contact Action Sheet for Emails and Phone Numbers",
+  "description": "React Native Contact Action Sheet for emails, phone numbers, and websites",
   "repository": "https://github.com/jefelewis/react-native-contact-action-sheet",
   "author": "Jeff Lewis",
   "license": "MIT",
