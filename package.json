@@ -16,6 +16,9 @@
     "contact",
     "email",
     "phone-number",
+    "website",
+    "webpage",
+    "url",
     "action-sheet",
     "actionsheet"
   ],
