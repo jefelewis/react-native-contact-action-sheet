@@ -16,7 +16,7 @@ const { height, width } = Dimensions.get('window');
 // TypeScript: Types
 interface Contact {
   title: string;
-  type: 'Email' | 'Phone Number' | 'Message' | string;
+  type: 'Email' | 'Phone Number' | 'Message' | 'Website' | string;
   contact: string;
 }
 
@@ -31,164 +31,155 @@ const ContactActionSheet = (props: Props) => {
 
   // Render Contact Selectors
   const renderContactSelectors = (props: Props) => {
-    try {
-      if (props.contactsList.length > 6) {
-        console.warn('React-Native-Contact-Action-Sheet Error: Maximum of 6 contacts allowed.');
-      }
-      else {
-        // Map Contacts List To Contact Selector
-        return props.contactsList.map((contact: Contact, index: number) => {
-          // Render Single Contact List
-          if (props.contactsList.length === 1) {
-            return (
-              <TouchableOpacity key={index} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
-                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
-                <View>
-                  <Text style={styles.contactTitle}>{contact.title}</Text>
-                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
-                </View>
-              </TouchableOpacity>
-            );
-          };
-
-          // Render First Index
-          if (props.contactsList.indexOf(contact) === 0) {
-            return (
-              <TouchableOpacity key={index} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
-                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
-                <View>
-                  <Text style={styles.contactTitle}>{contact.title}</Text>
-                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
-                </View>
-              </TouchableOpacity>
-            );
-          };
-
-          // Render Middle Indexes
-          if (
-            props.contactsList.indexOf(contact) >= 1
-            && props.contactsList.indexOf(contact) !== props.contactsList.length - 1
-            && props.contactsList.length >= 3
-          ) {
-            return (
-              <TouchableOpacity key={index} style={styles.contactSelector} onPress={() => callEmail(contact)}>
-                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
-                <View>
-                  <Text style={styles.contactTitle}>{contact.title}</Text>
-                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
-                </View>
-              </TouchableOpacity>
-            );
-          };
-
-          // Render Last Index
-          if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
-            return (
-              <TouchableOpacity key={index} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
-                <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
-                <View>
-                  <Text style={styles.contactTitle}>{contact.title}</Text>
-                  <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
-                </View>
-              </TouchableOpacity>
-            );
-          }
-        });
-      }
+    if (props.contactsList.length > 6) {
+      console.warn('React-Native-Contact-Action-Sheet Error: Maximum of 6 contacts allowed.');
     }
-    catch (error) {
-      console.log(error)
+    else {
+      // Map Contacts List To Contact Selector
+      return props.contactsList.map((contact: Contact, index: number) => {
+        // Render Single Contact List
+        if (props.contactsList.length === 1) {
+          return (
+            <TouchableOpacity key={index} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+              <View>
+                <Text style={styles.contactTitle}>{contact.title}</Text>
+                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        };
+
+        // Render First Index
+        if (props.contactsList.indexOf(contact) === 0) {
+          return (
+            <TouchableOpacity key={index} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+              <View>
+                <Text style={styles.contactTitle}>{contact.title}</Text>
+                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        };
+
+        // Render Middle Indexes
+        if (
+          props.contactsList.indexOf(contact) >= 1
+          && props.contactsList.indexOf(contact) !== props.contactsList.length - 1
+          && props.contactsList.length >= 3
+        ) {
+          return (
+            <TouchableOpacity key={index} style={styles.contactSelector} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+              <View>
+                <Text style={styles.contactTitle}>{contact.title}</Text>
+                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        };
+
+        // Render Last Index
+        if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
+          return (
+            <TouchableOpacity key={index} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+              <View>
+                <Text style={styles.contactTitle}>{contact.title}</Text>
+                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        }
+      });
     }
   };
 
   // Format Phone Number
   const formatPhoneNumber = (phoneNumber: string) => {
-    try {
-      // Remove Spaces
-      phoneNumber = phoneNumber.replace(/ /g, '');
-  
-      // Remove Special Characters
-      phoneNumber = phoneNumber.replace(/[^a-zA-Z0-9]/g, '');
-  
-      // Add Area Code 1
-      phoneNumber = '1'.concat('', phoneNumber);
+    // Remove Spaces
+    phoneNumber = phoneNumber.replace(/ /g, '');
 
-      // Check Phone Number Length
-      if (phoneNumber.length > 11) {
-        console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too long.');
-      }
+    // Remove Special Characters
+    phoneNumber = phoneNumber.replace(/[^a-zA-Z0-9]/g, '');
 
-      else if (phoneNumber.length < 11) {
-        console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too short.');
-      }
+    // Add Area Code 1
+    phoneNumber = '1'.concat('', phoneNumber);
 
-      else {
-        return phoneNumber;
-      }
+    // Check Phone Number Length
+    if (phoneNumber.length > 11) {
+      console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too long.');
     }
-    catch (error) {
-      console.log(error);
+
+    else if (phoneNumber.length < 11) {
+      console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too short.');
+    }
+
+    else {
+      return phoneNumber;
     }
   };
 
   // Call/Email
   const callEmail = (contact: Contact) => {
-    try {
-      // Check Type: Email
-      if (contact.type === 'Email') {
-        // Email Details
-        let email = `${contact.contact}`;
-        let subject = `${contact.title}`;
-        let body = '';
-  
-        // Send Email
-        Linking.openURL(`mailto:${email}?subject=${subject}&body=${body}`);
-      }
+    // Check Type: Email
+    if (contact.type === 'Email') {
+      // Email Details
+      let email = `${contact.contact}`;
+      let subject = `${contact.title}`;
+      let body = '';
 
-      // Check Type: Phone Number
-      else if (contact.type === 'Phone Number') {
-        // Call Phone Number
-        Linking.openURL(`tel:${formatPhoneNumber(contact.contact)}`);  
-      }
-
-      // Check Type: Message
-      else if (contact.type === 'Message') {
-        // Call Phone Number
-        Linking.openURL(`sms:${formatPhoneNumber(contact.contact)}`);  
-      }
-
-      // Toggle Modal
-      props.toggle();
+      // Send Email
+      Linking.openURL(`mailto:${email}?subject=${subject}&body=${body}`);
     }
-    catch (error) {
-      console.log(error);
+
+    // Check Type: Phone Number
+    else if (contact.type === 'Phone Number') {
+      // Call Phone Number
+      Linking.openURL(`tel:${formatPhoneNumber(contact.contact)}`);  
     }
+
+    // Check Type: Message
+    else if (contact.type === 'Message') {
+      // Call Phone Number
+      Linking.openURL(`sms:${formatPhoneNumber(contact.contact)}`);  
+    }
+
+    // Check Type: Website
+    else if (contact.type === 'Website') {
+      // Open Website
+      Linking.openURL(contact.contact);  
+    }
+
+    // Toggle Modal
+    props.toggle();
   };
 
   // Render Icon
   const renderIcon = (contact: Contact) => {
-    try {
-      // Type: Email
-      if (contact.type === 'Email') {
-        return 'ios-mail';
-      }
-
-      // Type: Phone Number
-      else if (contact.type === 'Phone Number') {
-        return 'ios-call';
-      }
-
-      // Type: Message
-      else if (contact.type === 'Message') {
-        return 'ios-text';
-      }
-
-      else {
-        return null;
-      }
+    // Type: Email
+    if (contact.type === 'Email') {
+      return 'ios-mail';
     }
-    catch (error) {
-      console.log(error);
+
+    // Type: Phone Number
+    else if (contact.type === 'Phone Number') {
+      return 'ios-call';
+    }
+
+    // Type: Message
+    else if (contact.type === 'Message') {
+      return 'ios-text';
+    }
+
+    // Type: Website
+    else if (contact.type === 'Website') {
+      return 'ios-globe';
+    }
+
+    else {
+      return null;
     }
   };
 
