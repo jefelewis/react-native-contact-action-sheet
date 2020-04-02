@@ -12,13 +12,8 @@ const App = () => {
 
   // Open Action Sheet
   const openActionSheet = () => {
-    try {
-      // React Hook: Toggle Modal
-      toggle((visible: boolean) => !visible);
-    }
-    catch (error) {
-      console.log(error);
-    }
+    // React Hook: Toggle Modal
+    toggle((visible: boolean) => !visible);
   };
 
   // Contacts
@@ -39,19 +34,19 @@ const App = () => {
       contact: '(777) 777-7777',
     },
     {
-      title: 'Company Headquarters',
-      type: 'Email',
-      contact: 'hq@company.com',
-    },
-    {
       title: 'Retail Store',
       type: 'Email',
-      contact: 'store@company.com',
+      contact: 'https://company.com',
+    },
+    {
+      title: 'Website',
+      type: 'Email',
+      contact: 'hq@company.com',
     },
   ];
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Button
         title="Show Modal"
         onPress={() => openActionSheet()}
