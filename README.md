@@ -73,13 +73,8 @@ const FunctionalComponent = () => {
 
   // Open Action Sheet
   const openActionSheet = () => {
-    try {
-      // React Hook: Toggle Modal
-      toggle((visible: boolean) => !visible);
-    }
-    catch (error) {
-      console.log(error);
-    }
+    // React Hook: Toggle Modal
+    toggle((visible: boolean) => !visible);
   };
 
   // Contacts
@@ -100,14 +95,14 @@ const FunctionalComponent = () => {
       contact: '(777) 777-7777',
     },
     {
-      title: 'Company Headquarters',
+      title: 'Retail Store',
       type: 'Email',
       contact: 'hq@company.com',
     },
     {
-      title: 'Retail Store',
-      type: 'Email',
-      contact: 'store@company.com',
+      title: 'Website',
+      type: 'Website',
+      contact: 'https://company.com',
     },
   ];
 
@@ -150,15 +145,10 @@ class ClassComponent extends React.Component {
 
   // Open Action Sheet
   openActionSheet = () => {
-    try {
-      // Set State
-      this.setState({
-        visible: !this.state.visible,
-      })
-    }
-    catch (error) {
-      console.log(error);
-    }
+    // Set State
+    this.setState({
+      visible: !this.state.visible,
+    })
   };
     
   render() {
@@ -180,14 +170,14 @@ class ClassComponent extends React.Component {
         contact: '(777) 777-7777',
       },
       {
-        title: 'Company Headquarters',
+        title: 'Retail Store',
         type: 'Email',
         contact: 'hq@company.com',
       },
       {
-        title: 'Retail Store',
-        type: 'Email',
-        contact: 'store@company.com',
+        title: 'Website',
+        type: 'Website',
+        contact: 'https://company.com',
       },
     ];
 
@@ -215,54 +205,58 @@ export default ClassComponent;
 
 ## Changelog
 
+### [0.1.2] - 4/2/2020
+
+***Added***
+
+- Added Website.
+
 ### [0.1.1] - 2/4/2020
 
 ***Added***
 
-- Adding `formatPhoneNumber` to convert phone number to `15555555555` format.
+- Added `formatPhoneNumber` to convert phone number to `15555555555` format.
 
 ***Changed***
 
-- Fixing React Native Vector Icons link issue.
-
+- Fixed React Native Vector Icons link issue.
 
 ### [0.1.0] - 2/3/2020
 
 ***Changed***
 
-- Fixing React Native Vector Icons podfile issue.
+- Fixed React Native Vector Icons podfile issue.
 
 ### [0.0.6] - 1/31/2020
 
 ***Changed***
 
-- Fixing maximum contacts issue.
-- Fixing outDir/dist issue.
+- Fixed maximum contacts issue.
+- Fixed outDir/dist issue.
 
 ### [0.0.5] - 1/31/2020
 
 ***Changed***
 
-- Fixing README example code.
+- Fixed README example code.
 
 ### [0.0.3] - 1/31/2020
 
 ***Added***
 
-- Adding support for Message.
+- Added support for Message.
 
 ***Changed***
 
-- Fixing toggle issue.
-
+- Fixed toggle issue.
 
 ### [0.0.2] - 1/30/2020
 
 ***Added***
 
-- Adding Android Support.
-- Adding iPhone X/11 Support.
-- Adding screenshots.
+- Added Android Support.
+- Added iPhone X/11 Support.
+- Added screenshots.
 
 ***Changed***
 
