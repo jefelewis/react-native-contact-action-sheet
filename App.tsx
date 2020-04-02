@@ -36,12 +36,12 @@ const App = () => {
     {
       title: 'Retail Store',
       type: 'Email',
-      contact: 'https://company.com',
+      contact: 'hq@company.com',
     },
     {
       title: 'Website',
-      type: 'Email',
-      contact: 'hq@company.com',
+      type: 'Website',
+      contact: 'https://company.com',
     },
   ];
 
