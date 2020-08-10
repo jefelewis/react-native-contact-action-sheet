@@ -1,8 +1,7 @@
 // Imports: Dependencies
 import React from 'react';
-import { Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
+import { Appearance, Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
-import { useDarkMode } from 'react-native-dark-mode';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/Ionicons';
 Icon.loadFont();
@@ -11,7 +10,7 @@ Icon.loadFont();
 const { height, width } = Dimensions.get('window');
 
 // Dark Mode
-// const isDarkMode: boolean = useDarkMode();
+const colorScheme = Appearance.getColorScheme();
 
 // TypeScript: Types
 interface Contact {
@@ -31,6 +30,7 @@ const ContactActionSheet = (props: Props) => {
 
   // Render Contact Selectors
   const renderContactSelectors = (props: Props) => {
+    // Check If Contacts List Is Less Than 6 Contact Items
     if (props.contactsList.length > 6) {
       console.warn('React-Native-Contact-Action-Sheet Error: Maximum of 6 contacts allowed.');
     }
@@ -137,19 +137,19 @@ const ContactActionSheet = (props: Props) => {
     // Check Type: Phone Number
     else if (contact.type === 'Phone Number') {
       // Call Phone Number
-      Linking.openURL(`tel:${formatPhoneNumber(contact.contact)}`);  
+      Linking.openURL(`tel:${formatPhoneNumber(contact.contact)}`);
     }
 
     // Check Type: Message
     else if (contact.type === 'Message') {
       // Call Phone Number
-      Linking.openURL(`sms:${formatPhoneNumber(contact.contact)}`);  
+      Linking.openURL(`sms:${formatPhoneNumber(contact.contact)}`);
     }
 
     // Check Type: Website
     else if (contact.type === 'Website') {
       // Open Website
-      Linking.openURL(contact.contact);  
+      Linking.openURL(contact.contact);
     }
 
     // Toggle Modal
@@ -170,7 +170,7 @@ const ContactActionSheet = (props: Props) => {
 
     // Type: Message
     else if (contact.type === 'Message') {
-      return 'ios-text';
+      return 'ios-chatbubble';
     }
 
     // Type: Website
@@ -202,7 +202,7 @@ const ContactActionSheet = (props: Props) => {
       </Modal>
     </View>
   );
-}
+};
 
 // Styles
 const styles = StyleSheet.create({
@@ -225,18 +225,17 @@ const styles = StyleSheet.create({
   contactSelectorSingle: {
     width: width - 20,
     height: 65,
-    backgroundColor: '#FFFFFF',
-    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
+    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
     borderRadius: 12,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   contactSelectorFirst: {
     width: width - 20,
     height: 65,
-    backgroundColor: '#FFFFFF',
-    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
+    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
     borderColor: '#7D7D7D',
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderTopLeftRadius: 12,
@@ -248,8 +247,7 @@ const styles = StyleSheet.create({
   contactSelector: {
     width: width - 20,
     height: 65,
-    backgroundColor: '#FFFFFF',
-    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
+    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -259,8 +257,7 @@ const styles = StyleSheet.create({
   contactSelectorLast: {
     width: width - 20,
     height: 65,
-    backgroundColor: '#FFFFFF',
-    // backgroundColor: isDarkMode ? '#FFFFFF' : '#000000',
+    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
     display: 'flex',
@@ -270,13 +267,14 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 25,
     marginRight: 25,
+    color: colorScheme === 'dark' ? '#FFFFFF' : '#7D7D7D',
   },
   contactTitle: {
     fontFamily: 'System',
     fontSize: 17,
     fontWeight: '500',
     marginBottom: 4,
-    color: '#323232',
+    color: colorScheme === 'dark' ? '#FFFFFF' : '#323232',
     width: width - 20 - 20 - 60,
   },
   emailPhone: {
@@ -291,7 +289,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: width - 20,
     height: 60,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
     ...ifIphoneX({
       marginBottom: 35,
     },
