@@ -112,7 +112,7 @@ const FunctionalComponent = () => {
         title="Show Modal"
         onPress={() => openActionSheet()}
       />
-  
+
       <ContactActionSheet
         visible={visible}
         toggle={toggle}
@@ -137,7 +137,7 @@ import { ContactActionSheet }  from 'react-native-contact-action-sheet';
 class ClassComponent extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       visible: false,
     }
@@ -150,7 +150,7 @@ class ClassComponent extends React.Component {
       visible: !this.state.visible,
     })
   };
-    
+
   render() {
     // Contacts
     const contacts = [
@@ -187,7 +187,7 @@ class ClassComponent extends React.Component {
           title="Show Modal"
           onPress={this.openActionSheet}
         />
-    
+
         <ContactActionSheet
           visible={this.state.visible}
           toggle={this.openActionSheet}
@@ -204,6 +204,23 @@ export default ClassComponent;
 
 
 ## Changelog
+
+### [0.1.3] - 8/9/2020
+
+***Added***
+
+- Added Dark Mode support. Please upgrade to React Native 0.62 for this to work.
+
+***Changed***
+
+- Updated `react` dependency.
+- Updated `react-native` dependency.
+- Updated `react-native-vector-icons dependency.
+- Updated `react-native-modal` dependency.
+
+***Removed***
+
+- Removed `react-native-dark-mode` dependency (Deprecated).
 
 ### [0.1.2] - 4/2/2020
 
