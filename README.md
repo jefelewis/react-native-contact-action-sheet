@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/react-native-contact-action-sheet.svg)](https://badge.fury.io/js/react-native-contact-action-sheet)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-contact-action-sheet.svg)](https://www.npmjs.com/package/react-native-contact-action-sheet)
 
+*  [Features](#features)
 *  [Built With](#built-with)
 *  [Pending Items](#pending-items)
 *  [Getting Started](#getting-started)
@@ -10,6 +11,12 @@
 *  [Screenshot (iOS)](#screenshot-ios)
 *  [Screenshot (Android)](#screenshot-android)
 *  [Changelog](#changelog)
+
+## Features
+*  ✅ iOS/Android
+*  ✅ Dark Mode
+*  ✅ Built with TypeScript
+*  ✅ Built with React Hooks
 
 ## Built With
 * [TypeScript](https://github.com/microsoft/TypeScript) - Programming Language
