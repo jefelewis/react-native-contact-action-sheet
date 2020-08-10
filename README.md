@@ -215,7 +215,7 @@ export default ClassComponent;
 
 - Updated `react` dependency.
 - Updated `react-native` dependency.
-- Updated `react-native-vector-icons dependency.
+- Updated `react-native-vector-icons` dependency.
 - Updated `react-native-modal` dependency.
 
 ***Removed***
