@@ -46,12 +46,12 @@ const App = () => {
   ];
 
   return (
-    <SafeAreaView style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <SafeAreaView style={{ display: 'flex', justifyContent: 'flex-start', height: '100%' }}>
       <Button
         title="Show Modal"
         onPress={() => openActionSheet()}
       />
-  
+
       <ContactActionSheet
         visible={visible}
         toggle={toggle}
