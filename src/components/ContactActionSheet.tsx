@@ -12,35 +12,31 @@ const { height, width } = Dimensions.get('window');
 // Dark Mode
 const colorScheme = Appearance.getColorScheme();
 
-// TypeScript: Types
-interface Contact {
-  title: string;
-  type: 'Email' | 'Phone Number' | 'Message' | 'Website' | string;
-  contact: string;
-}
+// Imports: TypeScript Types
+import { ContactItem, ContactIcon } from '../../src/types/types';
 
+// TypeScript Type: Props
 interface Props {
   visible: any;
   toggle: any,
-  contactsList: Array<Contact>;
+  contactsList: Array<ContactItem>;
 }
 
 // Component: Contact Action Sheet
-const ContactActionSheet = (props: Props) => {
-
+const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
   // Render Contact Selectors
-  const renderContactSelectors = (props: Props) => {
+  const renderContactSelectors = () => {
     // Check If Contacts List Is Less Than 6 Contact Items
     if (props.contactsList.length > 6) {
       console.warn('React-Native-Contact-Action-Sheet Error: Maximum of 6 contacts allowed.');
     }
     else {
       // Map Contacts List To Contact Selector
-      return props.contactsList.map((contact: Contact, index: number) => {
+      return props.contactsList.map((contact: ContactItem, i: number) => {
         // Render Single Contact List
         if (props.contactsList.length === 1) {
           return (
-            <TouchableOpacity key={index} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
+            <TouchableOpacity key={i} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
               <View>
                 <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -53,7 +49,7 @@ const ContactActionSheet = (props: Props) => {
         // Render First Index
         if (props.contactsList.indexOf(contact) === 0) {
           return (
-            <TouchableOpacity key={index} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
+            <TouchableOpacity key={i} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
               <View>
                 <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -70,7 +66,7 @@ const ContactActionSheet = (props: Props) => {
           && props.contactsList.length >= 3
         ) {
           return (
-            <TouchableOpacity key={index} style={styles.contactSelector} onPress={() => callEmail(contact)}>
+            <TouchableOpacity key={i} style={styles.contactSelector} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
               <View>
                 <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -83,7 +79,7 @@ const ContactActionSheet = (props: Props) => {
         // Render Last Index
         if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
           return (
-            <TouchableOpacity key={index} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
+            <TouchableOpacity key={i} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
               <View>
                 <Text style={styles.contactTitle}>{contact.title}</Text>
@@ -97,7 +93,7 @@ const ContactActionSheet = (props: Props) => {
   };
 
   // Format Phone Number
-  const formatPhoneNumber = (phoneNumber: string) => {
+  const formatPhoneNumber = (phoneNumber: string): string | undefined => {
     // Remove Spaces
     phoneNumber = phoneNumber.replace(/ /g, '');
 
@@ -111,41 +107,36 @@ const ContactActionSheet = (props: Props) => {
     if (phoneNumber.length > 11) {
       console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too long.');
     }
-
     else if (phoneNumber.length < 11) {
       console.warn('React-Native-Contact-Action-Sheet Error: Phone Number is too short.');
     }
-
     else {
       return phoneNumber;
     }
   };
 
   // Call/Email
-  const callEmail = (contact: Contact) => {
+  const callEmail = (contact: ContactItem): void => {
     // Check Type: Email
     if (contact.type === 'Email') {
       // Email Details
-      let email = `${contact.contact}`;
-      let subject = `${contact.title}`;
-      let body = '';
+      const email: string = `${contact.contact}`;
+      const subject: string = `${contact.title}`;
+      const body: string = '';
 
       // Send Email
       Linking.openURL(`mailto:${email}?subject=${subject}&body=${body}`);
     }
-
     // Check Type: Phone Number
     else if (contact.type === 'Phone Number') {
       // Call Phone Number
       Linking.openURL(`tel:${formatPhoneNumber(contact.contact)}`);
     }
-
     // Check Type: Message
     else if (contact.type === 'Message') {
       // Call Phone Number
       Linking.openURL(`sms:${formatPhoneNumber(contact.contact)}`);
     }
-
     // Check Type: Website
     else if (contact.type === 'Website') {
       // Open Website
@@ -157,29 +148,22 @@ const ContactActionSheet = (props: Props) => {
   };
 
   // Render Icon
-  const renderIcon = (contact: Contact) => {
+  const renderIcon = (contact: ContactItem): ContactIcon | undefined => {
     // Type: Email
     if (contact.type === 'Email') {
       return 'ios-mail';
     }
-
     // Type: Phone Number
     else if (contact.type === 'Phone Number') {
       return 'ios-call';
     }
-
     // Type: Message
     else if (contact.type === 'Message') {
       return 'ios-chatbubble';
     }
-
     // Type: Website
     else if (contact.type === 'Website') {
       return 'ios-globe';
-    }
-
-    else {
-      return null;
     }
   };
 
@@ -192,7 +176,7 @@ const ContactActionSheet = (props: Props) => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.contactListContainer}>
-            {renderContactSelectors(props)}
+            <>{renderContactSelectors()}</>
           </View>
 
           <TouchableOpacity onPress={() => props.toggle()} style={styles.cancelButtonContainer}>
