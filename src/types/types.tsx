@@ -7,3 +7,6 @@ export interface ContactItem {
     type: ContactType,
     contact: string,
 };
+
+// TypeScript Type: Contact Icon
+export type ContactIcon = 'ios-mail' | 'ios-call' | 'ios-chatbubble' | 'ios-globe';
