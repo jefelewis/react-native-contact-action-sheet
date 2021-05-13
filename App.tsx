@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
 
 // Imports: Components
-import ContactActionSheet from './src/ContactActionSheet';
+import { ContactActionSheet }  from 'react-native-contact-action-sheet';
 
-// React Native App
-const App = () => {
+// Imports: TypeScript Types
+import { ContactItem } from './src/types/types';
+
+// App
+const App: React.FC = (): JSX.Element => {
   // React Hooks: State
-  const [ visible, toggle ] = useState(false);
+  const [ visible, toggle ] = useState<boolean>(false);
 
   // Open Action Sheet
   const openActionSheet = () => {
@@ -17,7 +20,7 @@ const App = () => {
   };
 
   // Contacts
-  const contacts = [
+  const contacts: Array<ContactItem> = [
     {
       title: 'Company Headquarters',
       type: 'Phone Number',
@@ -46,7 +49,7 @@ const App = () => {
   ];
 
   return (
-    <SafeAreaView style={{ display: 'flex', justifyContent: 'flex-start', height: '100%' }}>
+    <SafeAreaView>
       <Button
         title="Show Modal"
         onPress={() => openActionSheet()}
@@ -58,7 +61,7 @@ const App = () => {
         contactsList={contacts}
       />
     </SafeAreaView>
-  )
+  );
 };
 
 // Exports
