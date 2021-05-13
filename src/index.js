@@ -1,5 +1,5 @@
 // Imports: Components
-import ContactActionSheet from './ContactActionSheet';
+import ContactActionSheet from './components/ContactActionSheet';
 
 // Exports
 export {
