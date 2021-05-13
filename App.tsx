@@ -14,7 +14,7 @@ const App: React.FC = (): JSX.Element => {
   const [ visible, toggle ] = useState<boolean>(false);
 
   // Open Action Sheet
-  const openActionSheet = () => {
+  const openActionSheet = (): void => {
     // React Hook: Toggle Modal
     toggle((visible: boolean) => !visible);
   };
