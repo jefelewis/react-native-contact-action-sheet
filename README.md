@@ -10,11 +10,13 @@
 *  [Example Code](#example-code)
 *  [Screenshot (iOS)](#screenshot-ios)
 *  [Screenshot (Android)](#screenshot-android)
+*  [Building & Publishing](#building-&-publishing)
 *  [Changelog](#changelog)
 
 ## Features
 *  ✅ iOS/Android
 *  ✅ Dark Mode
+*  ✅ Custom Styles
 *  ✅ Built with TypeScript
 *  ✅ Built with React Hooks
 
@@ -46,7 +48,14 @@ pod install
 ```
 
 **4. Run Project:**
+
+**Android**
+```javascript
+
 ```
+
+**iOS**
+```javascript
 react-native run-ios
 ```
 
@@ -65,7 +74,7 @@ react-native run-ios
 ## Example Code
 **Functional Component (Using React Hooks):**
 
-```javascript
+```typescript
 // Imports: Dependencies
 import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
@@ -73,10 +82,13 @@ import { Button, SafeAreaView } from 'react-native';
 // Imports: Components
 import { ContactActionSheet }  from 'react-native-contact-action-sheet';
 
-// Functional Component
-const FunctionalComponent = () => {
+// Imports: TypeScript Types
+import { ContactItem } from './src/types/types';
+
+// App
+const App: React.FC = (): JSX.Element => {
   // React Hooks: State
-  const [ visible, toggle ] = useState(false);
+  const [ visible, toggle ] = useState<boolean>(false);
 
   // Open Action Sheet
   const openActionSheet = () => {
@@ -85,7 +97,7 @@ const FunctionalComponent = () => {
   };
 
   // Contacts
-  const contacts = [
+  const contacts: Array<ContactItem> = [
     {
       title: 'Company Headquarters',
       type: 'Phone Number',
@@ -126,7 +138,7 @@ const FunctionalComponent = () => {
         contactsList={contacts}
       />
     </SafeAreaView>
-  )
+  );
 };
 
 // Exports
@@ -209,8 +221,30 @@ class ClassComponent extends React.Component {
 export default ClassComponent;
 ```
 
+## Building & Publishing
+
+**Build**
+```
+npm run build
+```
+
+**Publish**
+```
+npm run publish
+```
+
 
 ## Changelog
+
+### [0.1.4] - 5/13/2021
+
+***Added***
+
+- Added TypeScript `types` folder.
+
+***Changed***
+
+- 
 
 ### [0.1.3] - 8/9/2020
 
