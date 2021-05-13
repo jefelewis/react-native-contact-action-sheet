@@ -230,7 +230,7 @@ npm run build
 
 **Publish**
 ```
-npm run publish
+npm publish
 ```
 
 
@@ -250,7 +250,7 @@ npm run publish
 
 ***Added***
 
-- Added Dark Mode support. Please upgrade to React Native 0.62 for this to work.
+- Added Dark Mode support. Please upgrade to React Native `0.62` for this to work.
 
 ***Changed***
 
@@ -283,20 +283,20 @@ npm run publish
 
 ***Changed***
 
-- Fixed React Native Vector Icons podfile issue.
+- Fixed React Native Vector Icons `podfile` issue.
 
 ### [0.0.6] - 1/31/2020
 
 ***Changed***
 
 - Fixed maximum contacts issue.
-- Fixed outDir/dist issue.
+- Fixed `outDir/dist` issue.
 
 ### [0.0.5] - 1/31/2020
 
 ***Changed***
 
-- Fixed README example code.
+- Fixed `README` example code.
 
 ### [0.0.3] - 1/31/2020
 
