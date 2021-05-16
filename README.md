@@ -72,8 +72,6 @@ react-native run-ios
 
 
 ## Example Code
-**Functional Component (Using React Hooks):**
-
 ```typescript
 // Imports: Dependencies
 import React, { useState } from 'react';
@@ -92,7 +90,7 @@ const App: React.FC = (): JSX.Element => {
 
   // Open Action Sheet
   const openActionSheet = (): void => {
-    // React Hook: Toggle Modal
+    // Set State
     toggle((visible: boolean) => !visible);
   };
 
@@ -143,82 +141,6 @@ const App: React.FC = (): JSX.Element => {
 
 // Exports
 export default App;
-```
-
-**Class Component (Using State):**
-```javascript
-// Imports: Dependencies
-import React from 'react';
-import { Button, SafeAreaView } from 'react-native';
-import { ContactActionSheet }  from 'react-native-contact-action-sheet';
-
-// Screen: Class Component
-class ClassComponent extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      visible: false,
-    }
-  }
-
-  // Open Action Sheet
-  openActionSheet = () => {
-    // Set State
-    this.setState({
-      visible: !this.state.visible,
-    })
-  };
-
-  render() {
-    // Contacts
-    const contacts = [
-      {
-        title: 'Company Headquarters',
-        type: 'Phone Number',
-        contact: '(555) 555-5555',
-      },
-      {
-        title: 'Retail Store',
-        type: 'Phone Number',
-        contact: '(777) 777-7777',
-      },
-      {
-        title: 'Retail Store',
-        type: 'Message',
-        contact: '(777) 777-7777',
-      },
-      {
-        title: 'Retail Store',
-        type: 'Email',
-        contact: 'hq@company.com',
-      },
-      {
-        title: 'Website',
-        type: 'Website',
-        contact: 'https://company.com',
-      },
-    ];
-
-    return (
-      <SafeAreaView>
-        <Button
-          title="Show Modal"
-          onPress={this.openActionSheet}
-        />
-
-        <ContactActionSheet
-          visible={this.state.visible}
-          toggle={this.openActionSheet}
-          contactsList={contacts}
-        />
-      </SafeAreaView>
-    )
-  }
-}
-
-// Exports
-export default ClassComponent;
 ```
 
 ## Building & Publishing
