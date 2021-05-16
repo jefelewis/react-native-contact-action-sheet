@@ -158,6 +158,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.7] - 5/16/2021
+
+***Changed***
+
+- Fixed `package.json` missing `files` issue.
+
 ### [0.1.6] - 5/16/2021
 
 ***Changed***
