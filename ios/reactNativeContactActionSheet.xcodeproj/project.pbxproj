@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		32FBEA1AC344CBB9420C4563 /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2679E4BED2EE83B432EE9DA6 /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a */; };
+		252D777C333C0EA466357299 /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F52CA057E13DE55D6201E39C /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		EE22D9EEF9268ECCD373C86A /* libPods-ReactNativeContactActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F4A4F1359A00E29EE04E7 /* libPods-ReactNativeContactActionSheet.a */; };
+		EE396C2BD0CD327188DC47FE /* libPods-ReactNativeContactActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A2FA975E998C4C17F1D65D /* libPods-ReactNativeContactActionSheet.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +30,20 @@
 		00E356EE1AD99517003FC87E /* ReactNativeContactActionSheetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeContactActionSheetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ReactNativeContactActionSheetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeContactActionSheetTests.m; sourceTree = "<group>"; };
-		105F4A4F1359A00E29EE04E7 /* libPods-ReactNativeContactActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeContactActionSheet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* ReactNativeContactActionSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeContactActionSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ReactNativeContactActionSheet/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ReactNativeContactActionSheet/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ReactNativeContactActionSheet/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeContactActionSheet/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeContactActionSheet/main.m; sourceTree = "<group>"; };
-		1D919F630B2ED5D0FEE4DD7E /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig"; sourceTree = "<group>"; };
-		2679E4BED2EE83B432EE9DA6 /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CB254DACDBB35FF37798A6C /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig"; sourceTree = "<group>"; };
-		70D850AB99D08811A4023FDB /* Pods-ReactNativeContactActionSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet.release.xcconfig"; sourceTree = "<group>"; };
+		38961470E179897F293A1B8D /* Pods-ReactNativeContactActionSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet.debug.xcconfig"; sourceTree = "<group>"; };
+		3F4B4092BEAC2FD64F24769C /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeContactActionSheet/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DF4A033008C1185AA6D42A74 /* Pods-ReactNativeContactActionSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet.debug.xcconfig"; sourceTree = "<group>"; };
+		93A2FA975E998C4C17F1D65D /* libPods-ReactNativeContactActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeContactActionSheet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97B9982F4BC5F0D73794C7AB /* Pods-ReactNativeContactActionSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		ED5A9A84CC9007C193D71243 /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F52CA057E13DE55D6201E39C /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32FBEA1AC344CBB9420C4563 /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a in Frameworks */,
+				252D777C333C0EA466357299 /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE22D9EEF9268ECCD373C86A /* libPods-ReactNativeContactActionSheet.a in Frameworks */,
+				EE396C2BD0CD327188DC47FE /* libPods-ReactNativeContactActionSheet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +100,22 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				105F4A4F1359A00E29EE04E7 /* libPods-ReactNativeContactActionSheet.a */,
-				2679E4BED2EE83B432EE9DA6 /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a */,
+				93A2FA975E998C4C17F1D65D /* libPods-ReactNativeContactActionSheet.a */,
+				F52CA057E13DE55D6201E39C /* libPods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6567BA043F18E791DF7CE6B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38961470E179897F293A1B8D /* Pods-ReactNativeContactActionSheet.debug.xcconfig */,
+				97B9982F4BC5F0D73794C7AB /* Pods-ReactNativeContactActionSheet.release.xcconfig */,
+				ED5A9A84CC9007C193D71243 /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig */,
+				3F4B4092BEAC2FD64F24769C /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -121,7 +133,7 @@
 				00E356EF1AD99517003FC87E /* ReactNativeContactActionSheetTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				B23EC55CEFE6E658A43904D0 /* Pods */,
+				6567BA043F18E791DF7CE6B8 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,18 +149,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B23EC55CEFE6E658A43904D0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DF4A033008C1185AA6D42A74 /* Pods-ReactNativeContactActionSheet.debug.xcconfig */,
-				70D850AB99D08811A4023FDB /* Pods-ReactNativeContactActionSheet.release.xcconfig */,
-				2CB254DACDBB35FF37798A6C /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig */,
-				1D919F630B2ED5D0FEE4DD7E /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,11 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ReactNativeContactActionSheetTests" */;
 			buildPhases = (
-				FC3E4B3C515029A940A0EC59 /* [CP] Check Pods Manifest.lock */,
+				F297AFE37D25E262E70CC018 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				910CBED675CDAD7992F2AF1B /* [CP] Copy Pods Resources */,
+				0E4F48F4FCBC0B4C52A7F76C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +176,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeContactActionSheet" */;
 			buildPhases = (
-				2A998135CEFEDA17E6A5571D /* [CP] Check Pods Manifest.lock */,
+				CC0CBC86D1D0E187BD244957 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				B9C98638656B1B37D207BC16 /* [CP] Copy Pods Resources */,
+				53F4791F638204FAFA3ED0F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,7 +263,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		2A998135CEFEDA17E6A5571D /* [CP] Check Pods Manifest.lock */ = {
+		0E4F48F4FCBC0B4C52A7F76C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53F4791F638204FAFA3ED0F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC0CBC86D1D0E187BD244957 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,41 +319,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		910CBED675CDAD7992F2AF1B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests/Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9C98638656B1B37D207BC16 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeContactActionSheet/Pods-ReactNativeContactActionSheet-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC3E4B3C515029A940A0EC59 /* [CP] Check Pods Manifest.lock */ = {
+		F297AFE37D25E262E70CC018 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -393,7 +393,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CB254DACDBB35FF37798A6C /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig */;
+			baseConfigurationReference = ED5A9A84CC9007C193D71243 /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -420,7 +420,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D919F630B2ED5D0FEE4DD7E /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig */;
+			baseConfigurationReference = 3F4B4092BEAC2FD64F24769C /* Pods-ReactNativeContactActionSheet-ReactNativeContactActionSheetTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -444,7 +444,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF4A033008C1185AA6D42A74 /* Pods-ReactNativeContactActionSheet.debug.xcconfig */;
+			baseConfigurationReference = 38961470E179897F293A1B8D /* Pods-ReactNativeContactActionSheet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -470,7 +470,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70D850AB99D08811A4023FDB /* Pods-ReactNativeContactActionSheet.release.xcconfig */;
+			baseConfigurationReference = 97B9982F4BC5F0D73794C7AB /* Pods-ReactNativeContactActionSheet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
