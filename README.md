@@ -16,7 +16,6 @@
 ## Features
 *  ✅ iOS/Android
 *  ✅ Dark Mode
-*  ✅ Custom Styles
 *  ✅ Built with TypeScript
 *  ✅ Built with React Hooks
 
@@ -147,12 +146,12 @@ export default App;
 ## Building & Publishing
 
 **Build**
-```
+```javascript
 npm run build
 ```
 
 **Publish**
-```
+```javascript
 npm publish
 ```
 
@@ -187,7 +186,7 @@ npm publish
 
 ***Added***
 
-- Added Dark Mode support. Please upgrade to React Native `0.62` for this to work.
+- Added Dark Mode support. Please upgrade to `React Native 0.62` for this to work.
 
 ***Changed***
 
@@ -214,13 +213,13 @@ npm publish
 
 ***Changed***
 
-- Fixed React Native Vector Icons link issue.
+- Fixed `react-native-vector-icons` link issue.
 
 ### [0.1.0] - 2/3/2020
 
 ***Changed***
 
-- Fixed React Native Vector Icons `podfile` issue.
+- Fixed `react-native-vector-icons` `podfile` issue.
 
 ### [0.0.6] - 1/31/2020
 
@@ -243,13 +242,13 @@ npm publish
 
 ***Changed***
 
-- Fixed toggle issue.
+- Fixed `toggle` issue.
 
 ### [0.0.2] - 1/30/2020
 
 ***Added***
 
-- Added Android Support.
+- Added `Android` Support.
 - Added iPhone X/11 Support.
 - Added screenshots.
 
