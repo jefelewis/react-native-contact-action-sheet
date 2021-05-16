@@ -37,21 +37,21 @@
 npm i react-native-contact-action-sheet
 ```
 
-**2. Add pod to ios/Podfile:**
+<!-- **2. Add pod to ios/Podfile:**
 ```
 pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-```
+``` -->
 
-**3. Install Cocoapods:**
+**2. Install Cocoapods:**
 ```
 pod install
 ```
 
-**4. Run Project:**
+**3. Run Project:**
 
 **Android**
 ```javascript
-
+react-native run-android
 ```
 
 **iOS**
@@ -134,6 +134,7 @@ const App: React.FC = (): JSX.Element => {
         visible={visible}
         toggle={toggle}
         contactsList={contacts}
+        darkMode={false}
       />
     </SafeAreaView>
   );
@@ -160,6 +161,10 @@ npm publish
 
 ### [0.1.5] - 5/16/2021
 
+***Added***
+
+- Added `darkMode` prop.
+
 ***Changed***
 
 - Changed `react-native-iphone-x-helper` to `peerDependency`.
@@ -167,6 +172,10 @@ npm publish
 - Changed `react-native-vector-icons` to `peerDependency`.
 - Updated `README` Getting Started for `iOS` pods.
 - Updated `README` Getting Started for `Android` dependencies.
+
+***Removed***
+
+- Removed `Appearance` `react-native` prop for better dark mode support.
 
 ### [0.1.4] - 5/13/2021
 
