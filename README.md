@@ -236,15 +236,21 @@ npm publish
 
 ## Changelog
 
+### [0.1.5] - 5/16/2021
+
+***Changed***
+
+- Changed `react-native-iphone-x-helper` to `peerDependency`.
+- Changed `react-native-modal` to `peerDependency`.
+- Changed `react-native-vector-icons` to `peerDependency`.
+- Updated `README` Getting Started for `iOS` pods.
+- Updated `README` Getting Started for `Android` dependencies.
+
 ### [0.1.4] - 5/13/2021
 
 ***Added***
 
 - Added TypeScript `types` folder.
-
-***Changed***
-
-- 
 
 ### [0.1.3] - 8/9/2020
 
