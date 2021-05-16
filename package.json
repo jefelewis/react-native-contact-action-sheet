@@ -47,7 +47,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-iphone-x-helper": "^1.2.1",
+    "react-native-iphone-x-helper": ">=1.2.1",
     "react-native-modal": ">=11.0.0",
     "react-native-vector-icons": ">=7.0.0"
   },
