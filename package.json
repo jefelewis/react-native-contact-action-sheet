@@ -68,5 +68,8 @@
       "json",
       "node"
     ]
-  }
+  },
+  "files": [
+    "dist/"
+  ]
 }
