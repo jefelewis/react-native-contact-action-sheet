@@ -158,6 +158,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.6] - 5/16/2021
+
+***Changed***
+
+- Fixed missing `README` issue.
+
 ### [0.1.5] - 5/16/2021
 
 ***Added***
