@@ -1,6 +1,6 @@
 // Imports: Dependencies
 import React from 'react';
-import { Appearance, Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -8,9 +8,6 @@ Icon.loadFont();
 
 // Screen Dimensions
 const { height, width } = Dimensions.get('window');
-
-// Dark Mode
-const colorScheme = Appearance.getColorScheme();
 
 // Imports: TypeScript Types
 import { ContactItem, ContactIcon } from '../../src/types/types';
@@ -20,7 +17,8 @@ interface Props {
   visible: any;
   toggle: any,
   contactsList: Array<ContactItem>;
-}
+  darkMode?: boolean,
+};
 
 // Component: Contact Action Sheet
 const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
@@ -28,7 +26,8 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
   const renderContactSelectors = () => {
     // Check If Contacts List Is Less Than 6 Contact Items
     if (props.contactsList.length > 6) {
-      console.warn('React-Native-Contact-Action-Sheet Error: Maximum of 6 contacts allowed.');
+      // Error
+      throw new Error('React-Native-Contact-Action-Sheet Error: Maximum of 6 contacts allowed.');
     }
     else {
       // Map Contacts List To Contact Selector
@@ -36,24 +35,23 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
         // Render Single Contact List
         if (props.contactsList.length === 1) {
           return (
-            <TouchableOpacity key={i} style={styles.contactSelectorSingle} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+            <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorSingleDark : styles.contactSelectorSingleLight} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
               <View>
-                <Text style={styles.contactTitle}>{contact.title}</Text>
-                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
+                <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
               </View>
             </TouchableOpacity>
           );
         };
-
         // Render First Index
         if (props.contactsList.indexOf(contact) === 0) {
           return (
-            <TouchableOpacity key={i} style={styles.contactSelectorFirst} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+            <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorFirstDark : styles.contactSelectorFirstLight} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
               <View>
-                <Text style={styles.contactTitle}>{contact.title}</Text>
-                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
+                <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
               </View>
             </TouchableOpacity>
           );
@@ -66,11 +64,11 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
           && props.contactsList.length >= 3
         ) {
           return (
-            <TouchableOpacity key={i} style={styles.contactSelector} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+            <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorDark : styles.contactSelectorLight} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
               <View>
-                <Text style={styles.contactTitle}>{contact.title}</Text>
-                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
+                <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
               </View>
             </TouchableOpacity>
           );
@@ -79,11 +77,11 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
         // Render Last Index
         if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
           return (
-            <TouchableOpacity key={i} style={styles.contactSelectorLast} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={28} style={styles.icon} color="#323232"></Icon>
+            <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorLastDark : styles.contactSelectorLastLight} onPress={() => callEmail(contact)}>
+              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
               <View>
-                <Text style={styles.contactTitle}>{contact.title}</Text>
-                <Text style={styles.emailPhone} numberOfLines={1}>{contact.contact}</Text>
+                <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
+                <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
               </View>
             </TouchableOpacity>
           );
@@ -179,7 +177,7 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
             <>{renderContactSelectors()}</>
           </View>
 
-          <TouchableOpacity onPress={() => props.toggle()} style={styles.cancelButtonContainer}>
+          <TouchableOpacity onPress={() => props.toggle()} style={props.darkMode ? styles.cancelButtonContainerDark : styles.cancelButtonContainerLight}>
             <Text style={styles.cancelText}>Cancel</Text>
           </TouchableOpacity>
         </View>
@@ -206,20 +204,30 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignItems: 'center',
   },
-  contactSelectorSingle: {
+  contactSelectorSingleLight: {
     width: width - 20,
     height: 65,
-    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
+    backgroundColor: '#383838',
     borderRadius: 12,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
-  contactSelectorFirst: {
+  contactSelectorSingleDark: {
     width: width - 20,
     height: 65,
-    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
+    backgroundColor: '#383838',
+    borderRadius: 12,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  contactSelectorFirstLight: {
+    width: width - 20,
+    height: 65,
+    backgroundColor: '#FFFFFF',
     borderColor: '#7D7D7D',
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderTopLeftRadius: 12,
@@ -228,52 +236,122 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  contactSelector: {
+  contactSelectorFirstDark: {
     width: width - 20,
     height: 65,
-    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
+    backgroundColor: '#383838',
+    borderColor: '#7D7D7D',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  contactSelectorLight: {
+    width: width - 20,
+    height: 65,
+    backgroundColor: '#FFFFFF',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     borderColor: '#7D7D7D',
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
-  contactSelectorLast: {
+  contactSelectorDark: {
     width: width - 20,
     height: 65,
-    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
+    backgroundColor: '#383838',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: '#7D7D7D',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  contactSelectorLastLight: {
+    width: width - 20,
+    height: 65,
+    backgroundColor: '#FFFFFF',
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
-  icon: {
+  contactSelectorLastDark: {
+    width: width - 20,
+    height: 65,
+    backgroundColor: '#383838',
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  iconLight: {
     marginLeft: 25,
     marginRight: 25,
-    color: colorScheme === 'dark' ? '#FFFFFF' : '#7D7D7D',
+    color: '#8A8A8E',
   },
-  contactTitle: {
+  iconDark: {
+    marginLeft: 25,
+    marginRight: 25,
+    color: '#8D8D93',
+  },
+  contactTitleLight: {
     fontFamily: 'System',
     fontSize: 17,
     fontWeight: '500',
+    color: '#323232',
+    letterSpacing: -0.41,
     marginBottom: 4,
-    color: colorScheme === 'dark' ? '#FFFFFF' : '#323232',
     width: width - 20 - 20 - 60,
   },
-  emailPhone: {
+  contactTitleDark: {
+    fontFamily: 'System',
+    fontSize: 17,
+    fontWeight: '500',
+    color: '#FFFFFF',
+    letterSpacing: -0.41,
+    marginBottom: 4,
+    width: width - 20 - 20 - 60,
+  },
+  emailPhoneTextLight: {
     fontFamily: 'System',
     fontSize: 15,
     fontWeight: '400',
-    color: '#7D7D7D',
+    color: '#8A8A8E',
+    letterSpacing: -0.24,
     width: width - 20 - 20 - 50,
   },
-  cancelButtonContainer: {
+  emailPhoneTextDark: {
+    fontFamily: 'System',
+    fontSize: 15,
+    fontWeight: '400',
+    color: '#8D8D93',
+    letterSpacing: -0.24,
+    width: width - 20 - 20 - 50,
+  },
+  cancelButtonContainerLight: {
     alignItems: 'center',
     justifyContent: 'center',
     width: width - 20,
     height: 60,
-    backgroundColor: colorScheme === 'dark' ? '#383838' : '#FFFFFF',
+    backgroundColor: '#FFFFFF',
+    ...ifIphoneX({
+      marginBottom: 35,
+    },
+    {
+      marginBottom: 10,
+    }),
+    borderRadius: 12,
+  },
+  cancelButtonContainerDark: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: width - 20,
+    height: 60,
+    backgroundColor: '#383838',
     ...ifIphoneX({
       marginBottom: 35,
     },
@@ -284,7 +362,7 @@ const styles = StyleSheet.create({
   },
   cancelText: {
     fontFamily: 'System',
-    fontSize: 20,
+    fontSize: 17,
     color: '#007AFF',
     fontWeight: '600',
   },
