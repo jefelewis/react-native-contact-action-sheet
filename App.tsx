@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
 
 // Imports: Components
-import { ContactActionSheet }  from 'react-native-contact-action-sheet';
+import { ContactActionSheet }  from './src/index';
 
 // Imports: TypeScript Types
 import { ContactItem } from './src/types/types';
@@ -59,6 +59,7 @@ const App: React.FC = (): JSX.Element => {
         visible={visible}
         toggle={toggle}
         contactsList={contacts}
+        darkMode={true}
       />
     </SafeAreaView>
   );
