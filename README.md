@@ -21,10 +21,10 @@
 
 ## Built With
 * [TypeScript](https://github.com/microsoft/TypeScript) - Programming Language
+* [React Hooks](https://reactjs.org/docs/hooks-intro.html) - Functional Component State/Lifecycle Methods
 * [React Native](https://facebook.github.io/react-native/) - Mobile (iOS/Android) Framework
 * [React Native Modal](https://github.com/react-native-community/react-native-modal) - Modal
 * [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons) - Icons
-* [React Hooks](https://reactjs.org/docs/hooks-intro.html) - Functional Component State/Lifecycle Methods
 
 ## Pending Items
 - [ ] 
