@@ -156,6 +156,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.9] - 5/17/2021
+
+***Changed***
+
+- Adding `react-native-vector-icons` as a dependency.
+
 ### [0.1.8] - 5/16/2021
 
 ***Changed***
