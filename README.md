@@ -156,6 +156,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.10] - 5/17/2021
+
+***Changed***
+
+- Importing `react-native-vector-icons` in `index.js`.
+
 ### [0.1.9] - 5/17/2021
 
 ***Changed***
