@@ -1,3 +1,6 @@
+// Imports: Dependencies
+require('react-native-vector-icons');
+
 // Imports: Components
 import ContactActionSheet from './components/ContactActionSheet';
 
