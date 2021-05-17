@@ -3,10 +3,7 @@ import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
 
 // Imports: Components
-import { ContactActionSheet }  from './src/index';
-
-// Imports: TypeScript Types
-import { ContactItem } from './src/types/types';
+import { ContactActionSheet, ContactItem }  from './src/index';
 
 // App
 const App: React.FC = (): JSX.Element => {
