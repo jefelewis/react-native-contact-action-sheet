@@ -30,7 +30,7 @@
 - [ ] 
 
 ## Getting Started
-**Note:** Maximum of 6 Phone Numbers and Emails Total allowed.
+**Note:** Maximum of 6 Phone Numbers and/or Emails allowed.
 
 **1. Install Package:**
 ```
@@ -78,10 +78,7 @@ import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
 
 // Imports: Components
-import { ContactActionSheet }  from 'react-native-contact-action-sheet';
-
-// Imports: TypeScript Types
-import { ContactItem } from './src/types/types';
+import { ContactActionSheet, ContactItem }  from 'react-native-contact-action-sheet';
 
 // App
 const App: React.FC = (): JSX.Element => {
@@ -158,6 +155,13 @@ npm publish
 
 
 ## Changelog
+
+### [0.1.8] - 5/16/2021
+
+***Changed***
+
+- Exported `ContactItem` TypeScript Type.
+- Updated example code.
 
 ### [0.1.7] - 5/16/2021
 
