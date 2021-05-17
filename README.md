@@ -156,6 +156,17 @@ npm publish
 
 ## Changelog
 
+### [0.1.11] - 5/17/2021
+
+***Changed***
+
+- Updating dependencies in `package.json`.
+
+***Removed***
+
+- Removed `react-native-vector-icons` in `index.js`.
+- Removed `react-native-vector-icons` as a dependency.
+
 ### [0.1.10] - 5/17/2021
 
 ***Changed***
