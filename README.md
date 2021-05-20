@@ -149,15 +149,15 @@ react-native run-ios
 **Default:**
 | Property          |   Type                 |  Default              | Description                                                            |
 | ----------------- | :--------------------: | :-------------------: | ---------------------------------------------------------------------- |
-| toggle            | () => void             | undefined             | Toggle modal (Show/Hide)                                               |
-| modalVisible      | boolean                | false                 | Modal visible                                                          |
-| contactsList      | Array<ContactItem>     | []                    | Contact data (Phone number, Email Address, Website)                    |
+| `toggle`          | `() => void`           | `undefined`           | Toggle modal (Show/Hide)                                               |
+| `modalVisible`    | `boolean`              | `false`               | Modal visible                                                          |
+| `contactsList`    | `Array<ContactItem>`   | `[]`                  | Contact data (Phone number, Email Address, Website)                    |
 
 
 **Optional:**
-| Property                          |   Type                       |  Default  | Description                                                            |
-| --------------------------------- | :--------------------------: | :-------: | ---------------------------------------------------------------------- |
-| darkMode                          | boolean                      | false     | Dark mode                                                              |
+| Property                          |   Type                       |  Default     | Description                                                            |
+| --------------------------------- | :--------------------------: | :----------: | ---------------------------------------------------------------------- |
+| `darkMode`                        | `boolean`                    | `false`      | Dark mode                                                              |
 
 
 ## Building & Publishing
