@@ -149,8 +149,8 @@ react-native run-ios
 **Default:**
 | Property          |   Type                 |  Default              | Description                                                            |
 | ----------------- | :--------------------: | :-------------------: | ---------------------------------------------------------------------- |
+| toggle            | () => void             | undefined             | Toggle modal (Show/Hide)                                               |
 | modalVisible      | boolean                | false                 | Modal visible                                                          |
-| toggle            | () => void()           | undefined             | Toggle modal (Show/Hide)                                               |
 | contactsList      | Array<ContactItem>     | []                    | Contact data (Phone number, Email Address, Website)                    |
 
 
