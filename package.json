@@ -26,6 +26,13 @@
     "build": "cd src && tsc && cp ../package.json && Echo Build completed!",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-iphone-x-helper": "*",
+    "react-native-slide-modal": "*",
+    "react-native-vector-icons": "*"
+  },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/react": "^17.0.6",
