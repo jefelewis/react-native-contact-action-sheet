@@ -14,8 +14,8 @@ import { ContactItem, ContactIcon } from '../../src/types/types';
 
 // TypeScript Type: Props
 interface Props {
-  visible: any;
-  toggle: any,
+  modalVisible: boolean;
+  toggle: () => void,
   contactsList: Array<ContactItem>;
   darkMode?: boolean,
 };
@@ -168,7 +168,7 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
   return (
     <View style={styles.container}>
       <Modal
-        isVisible={props.visible}
+        isVisible={props.modalVisible}
         style={styles.modal}
         backdropOpacity={.30}
       >
