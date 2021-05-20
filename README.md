@@ -75,12 +75,6 @@ const App: React.FC = (): JSX.Element => {
   // React Hooks: State
   const [ visible, toggle ] = useState<boolean>(false);
 
-  // Open Action Sheet
-  const openActionSheet = (): void => {
-    // Set State
-    toggle((visible: boolean) => !visible);
-  };
-
   // Contacts
   const contacts: Array<ContactItem> = [
     {
@@ -114,13 +108,13 @@ const App: React.FC = (): JSX.Element => {
     <SafeAreaView>
       <Button
         title="Show Modal"
-        onPress={() => openActionSheet()}
+        onPress={() => setVisible(!visible)}
       />
 
       <ContactActionSheet
-        visible={visible}
-        toggle={toggle}
+        toggle={() => setVisible(!visible)}
         contactsList={contacts}
+        modalVisible={visible}
         darkMode={false}
       />
     </SafeAreaView>
