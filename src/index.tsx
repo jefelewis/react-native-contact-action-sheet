@@ -6,6 +6,8 @@ import { ContactItem } from './types/types';
 
 // Exports
 export {
+  // Components
   ContactActionSheet,
+  // TypeScript Types
   ContactItem,
 };
