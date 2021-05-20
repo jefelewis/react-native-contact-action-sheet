@@ -10,7 +10,6 @@
 *  [Screenshot (Android)](#screenshot-android)
 *  [Getting Started](#getting-started)
 *  [Props](#props)
-*  [Example Code](#example-code)
 *  [Building & Publishing](#building-&-publishing)
 *  [Changelog](#changelog)
 
