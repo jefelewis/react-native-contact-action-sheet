@@ -30,7 +30,7 @@
     "react": "*",
     "react-native": "*",
     "react-native-iphone-x-helper": "*",
-    "react-native-slide-modal": "*",
+    "react-native-modal": "*",
     "react-native-vector-icons": "*"
   },
   "devDependencies": {
