@@ -6,10 +6,11 @@
 *  [Features](#features)
 *  [Built With](#built-with)
 *  [Pending Items](#pending-items)
-*  [Getting Started](#getting-started)
-*  [Example Code](#example-code)
 *  [Screenshot (iOS)](#screenshot-ios)
 *  [Screenshot (Android)](#screenshot-android)
+*  [Getting Started](#getting-started)
+*  [Props](#props)
+*  [Example Code](#example-code)
 *  [Building & Publishing](#building-&-publishing)
 *  [Changelog](#changelog)
 
@@ -29,6 +30,19 @@
 ## Pending Items
 - [ ] 
 
+
+## Screenshot (iOS)
+<div align="center">
+  <img src="/assets/screenshots/ios/iosActionSheet.gif" width="40%" height="40%" />
+</div>
+
+## Screenshot (Android)
+<div align="center">
+  <img src="/assets/screenshots/android/androidActionSheet.gif" width="40%" height="40%" />
+</div>
+
+
+
 ## Getting Started
 **Note:** Maximum of 6 Phone Numbers and/or Emails allowed.
 
@@ -47,31 +61,8 @@ pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 pod install
 ```
 
-**3. Run Project:**
+**3. Add Example Code:**
 
-**Android**
-```javascript
-react-native run-android
-```
-
-**iOS**
-```javascript
-react-native run-ios
-```
-
-
-## Screenshot (iOS)
-<div align="center">
-  <img src="/screenshots/ios/iosActionSheet.gif" width="40%" height="40%" />
-</div>
-
-## Screenshot (Android)
-<div align="center">
-  <img src="/screenshots/android/androidActionSheet.gif" width="40%" height="40%" />
-</div>
-
-
-## Example Code
 ```typescript
 // Imports: Dependencies
 import React, { useState } from 'react';
@@ -141,6 +132,35 @@ const App: React.FC = (): JSX.Element => {
 export default App;
 ```
 
+**4. Run Project:**
+
+**Android**
+```javascript
+react-native run-android
+```
+
+**iOS**
+```javascript
+react-native run-ios
+```
+
+
+## Props
+
+**Default:**
+| Property          |   Type                 |  Default              | Description                                                            |
+| ----------------- | :--------------------: | :-------------------: | ---------------------------------------------------------------------- |
+| modalVisible      | boolean                | false                 | Modal visible                                                          |
+| toggle            | () => void()           | undefined             | Toggle modal (Show/Hide)                                               |
+| contactsList      | Array<ContactItem>     | []                    | Contact data (Phone number, Email Address, Website)                    |
+
+
+**Optional:**
+| Property                          |   Type                       |  Default  | Description                                                            |
+| --------------------------------- | :--------------------------: | :-------: | ---------------------------------------------------------------------- |
+| darkMode                          | boolean                      | false     | Dark mode                                                              |
+
+
 ## Building & Publishing
 
 **Build**
@@ -153,6 +173,25 @@ npm run build
 npm publish
 ```
 
+## Changelog
+
+### [0.1.12] - 5/19/2021
+
+***Added***
+
+- Added Props section to `README`.
+- Added Example App section to `README`.
+
+***Changed***
+
+- Changed file structure.
+- Changed `index.js` to `index.tsx`.
+- Changed `package.json` build script to `cd src && tsc && cp ../package.json && Echo Build completed!`.
+
+***Removed***
+
+- Removed `dependencies`.
+
 
 ## Changelog
 
@@ -160,7 +199,8 @@ npm publish
 
 ***Changed***
 
-- Updating dependencies in `package.json`.
+- Updated`dependencies` in `package.json`.
+- Changed`visible` to `modalVisible`.
 
 ***Removed***
 
