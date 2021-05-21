@@ -50,17 +50,17 @@
 npm i react-native-contact-action-sheet
 ```
 
-<!-- **2. Add pod to ios/Podfile:**
+**2. Add pod to iOS Podfile:**
 ```
 pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-``` -->
+```
 
-**2. Install Cocoapods:**
+**3. Install Cocoapods:**
 ```
 pod install
 ```
 
-**3. Add Example Code:**
+**4. Add Example Code:**
 
 ```typescript
 // Imports: Dependencies
@@ -167,6 +167,12 @@ npm publish
 ```
 
 ## Changelog
+
+### [0.1.17] - 5/20/2021
+
+***Changed***
+
+- Updating Getting Started in `README`.
 
 ### [0.1.16] - 5/20/2021
 
