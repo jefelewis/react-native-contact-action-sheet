@@ -168,7 +168,13 @@ npm publish
 
 ## Changelog
 
-### [0.1.12] - 5/19/2021
+### [0.1.16] - 5/20/2021
+
+***Changed***
+
+- Changed `react-native-iphone-x-helper`, `react-native-modal`, and `react-native-vector-icons` from `peerDependencies` to `dependencies`.
+
+### [0.1.15] - 5/20/2021
 
 ***Added***
 
@@ -185,10 +191,7 @@ npm publish
 
 - Removed `dependencies`.
 
-
-## Changelog
-
-### [0.1.15] - 5/17/2021
+### [0.1.14] - 5/17/2021
 
 ***Changed***
 
