@@ -15,8 +15,8 @@ import { ContactItem, ContactIcon } from '../../src/types/types';
 // TypeScript Type: Props
 interface Props {
   toggle: () => void,
-  modalVisible: boolean;
-  contactsList: Array<ContactItem>;
+  modalVisible: boolean,
+  contactsList: Array<ContactItem>,
   darkMode?: boolean,
 };
 
