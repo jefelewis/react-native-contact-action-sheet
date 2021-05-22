@@ -57,6 +57,8 @@ pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
 **3. Install Cocoapods:**
 ```
+cd ios
+
 pod install
 ```
 
@@ -167,6 +169,12 @@ npm publish
 ```
 
 ## Changelog
+
+### [0.1.18] - 5/20/2021
+
+***Changed***
+
+- Updating Getting Started in `README`.
 
 ### [0.1.17] - 5/20/2021
 
