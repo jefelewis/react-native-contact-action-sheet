@@ -170,6 +170,13 @@ npm publish
 
 ## Changelog
 
+### [0.1.20] - 5/22/2021
+
+***Changed***
+
+- Fixed `npm run build` and `npm publish` issue.
+
+
 ### [0.1.19] - 5/22/2021
 
 ***Changed***
