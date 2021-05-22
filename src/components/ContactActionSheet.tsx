@@ -3,8 +3,8 @@ import React from 'react';
 import { Dimensions, StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
-import Icon from 'react-native-vector-icons/Ionicons';
-Icon.loadFont();
+import Ionicons from 'react-native-vector-icons/Ionicons';
+Ionicons.loadFont();
 
 // Screen Dimensions
 const { height, width } = Dimensions.get('window');
@@ -36,11 +36,12 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
         if (props.contactsList.length === 1) {
           return (
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorSingleDark : styles.contactSelectorSingleLight} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
-              <View>
+              <Ionicons name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
+
+              <>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </View>
+              </>
             </TouchableOpacity>
           );
         };
@@ -48,11 +49,12 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
         if (props.contactsList.indexOf(contact) === 0) {
           return (
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorFirstDark : styles.contactSelectorFirstLight} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
-              <View>
+              <Ionicons name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
+
+              <>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </View>
+              </>
             </TouchableOpacity>
           );
         };
@@ -65,11 +67,12 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
         ) {
           return (
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorDark : styles.contactSelectorLight} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
-              <View>
+              <Ionicons name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
+
+              <>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </View>
+              </>
             </TouchableOpacity>
           );
         };
@@ -78,11 +81,12 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
         if (props.contactsList.indexOf(contact) === props.contactsList.length - 1) {
           return (
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorLastDark : styles.contactSelectorLastLight} onPress={() => callEmail(contact)}>
-              <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
-              <View>
+              <Ionicons name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
+
+              <>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </View>
+              </>
             </TouchableOpacity>
           );
         }
