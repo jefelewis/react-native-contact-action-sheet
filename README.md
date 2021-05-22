@@ -170,7 +170,13 @@ npm publish
 
 ## Changelog
 
-### [0.1.18] - 5/20/2021
+### [0.1.19] - 5/22/2021
+
+***Changed***
+
+- Changing `import Icon from 'react-native-vector-icons/Ionicons'` to `import Ionicons from 'react-native-vector-icons/Ionicons'`.
+
+### [0.1.18] - 5/22/2021
 
 ***Changed***
 
