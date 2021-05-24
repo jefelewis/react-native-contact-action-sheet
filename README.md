@@ -173,7 +173,8 @@ npm publish
 
 ***Changed***
 
-- Updating Getting Started in `README`.
+- Changed `react-native-vector-icons` from `dependency` to `devDependency` and `peerDependency`.
+- Updated Getting Started in `README`.
 - Fixed missing `react` `peerDependency`.
 - Fixed missing `react-native` `peerDependency`.
 
