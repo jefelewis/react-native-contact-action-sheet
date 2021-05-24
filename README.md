@@ -52,9 +52,9 @@
 npm i react-native-contact-action-sheet
 ```
 
-**2. Add pod to iOS Podfile:**
+**2. Install additional dependencies:**
 ```
-pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+npm i react-native-vector-icons
 ```
 
 **3. Install Cocoapods:**
@@ -169,6 +169,18 @@ npm publish
 
 ## Changelog
 
+### [0.1.25] - 5/24/2021
+
+***Changed***
+
+- Updating Getting Started in `README`.
+- Fixed missing `react` `peerDependency`.
+- Fixed missing `react-native` `peerDependency`.
+
+***Removed***
+
+- Removed `RNVectorIcons.podspec` from `src`.
+
 ### [0.1.24] - 5/24/2021
 
 - Updated example code in `README`.
@@ -196,7 +208,6 @@ npm publish
 ***Changed***
 
 - Fixed `npm run build` and `npm publish` issue.
-
 
 ### [0.1.19] - 5/22/2021
 
