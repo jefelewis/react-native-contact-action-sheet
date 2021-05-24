@@ -169,6 +169,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.23] - 5/24/2021
+
+***Changed***
+
+- Added `RNVectorIcons.podspec` to `src`.
+
 ### [0.1.22] - 5/24/2021
 
 ***Changed***
