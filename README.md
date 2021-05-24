@@ -179,7 +179,7 @@ npm publish
 
 ***Removed***
 
-Removed `react-native-typescript-transformer` as dependency.
+- Removed `react-native-typescript-transformer` as dependency.
 
 ### [0.1.20] - 5/22/2021
 
