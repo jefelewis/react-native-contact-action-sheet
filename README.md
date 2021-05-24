@@ -74,7 +74,7 @@ import { ContactActionSheet, ContactItem }  from 'react-native-contact-action-sh
 // App
 const App: React.FC = (): JSX.Element => {
   // React Hooks: State
-  const [ visible, toggle ] = useState<boolean>(false);
+  const [ visible, setVisible ] = useState<boolean>(false);
 
   // Contacts
   const contacts: Array<ContactItem> = [
@@ -168,6 +168,10 @@ npm publish
 ```
 
 ## Changelog
+
+### [0.1.24] - 5/24/2021
+
+- Updated example code in `README`.
 
 ### [0.1.23] - 5/24/2021
 
