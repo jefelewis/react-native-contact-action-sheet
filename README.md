@@ -177,6 +177,10 @@ npm publish
 - Changed main path from `dist/index.js` to `./dist/index.js`in `package.json`.
 - Changed types path from `dist/index.d.ts` to `./dist/index.d.ts` in `package.json`.
 
+***Removed***
+
+Removed `react-native-typescript-transformer` as dependency.
+
 ### [0.1.20] - 5/22/2021
 
 ***Changed***
