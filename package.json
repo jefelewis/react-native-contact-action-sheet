@@ -1,6 +1,6 @@
 {
   "name": "react-native-contact-action-sheet",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "description": "React Native Contact Action Sheet for emails, phone numbers, and websites",
@@ -25,10 +25,6 @@
   "scripts": {
     "build": "cd src && tsc && cp ../package.json && Echo Build completed!",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
   },
   "dependencies": {
     "react-native-iphone-x-helper": "^1.3.1",
