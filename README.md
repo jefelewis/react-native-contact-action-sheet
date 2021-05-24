@@ -13,11 +13,13 @@
 *  [Building & Publishing](#building-&-publishing)
 *  [Changelog](#changelog)
 
+
 ## Features
 *  ✅ iOS/Android
 *  ✅ Dark Mode
 *  ✅ Built with TypeScript
 *  ✅ Built with React Hooks
+
 
 ## Built With
 * [TypeScript](https://github.com/microsoft/TypeScript) - Programming Language
@@ -26,20 +28,20 @@
 * [React Native Modal](https://github.com/react-native-community/react-native-modal) - Modal
 * [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons) - Icons
 
+
 ## Pending Items
 - [ ] 
 
 
 ## Screenshot (iOS)
 <div align="center">
-  <img src="/assets/screenshots/ios/iosActionSheet.gif" width="40%" height="40%" />
+  <img src="./assets/screenshots/ios/iosActionSheet.gif" width="40%" height="40%" />
 </div>
 
 ## Screenshot (Android)
 <div align="center">
-  <img src="/assets/screenshots/android/androidActionSheet.gif" width="40%" height="40%" />
+  <img src="./assets/screenshots/android/androidActionSheet.gif" width="40%" height="40%" />
 </div>
-
 
 
 ## Getting Started
@@ -63,13 +65,10 @@ pod install
 ```
 
 **4. Add Example Code:**
-
 ```typescript
 // Imports: Dependencies
 import React, { useState } from 'react';
 import { Button, SafeAreaView } from 'react-native';
-
-// Imports: Components
 import { ContactActionSheet, ContactItem }  from 'react-native-contact-action-sheet';
 
 // App
@@ -169,6 +168,14 @@ npm publish
 ```
 
 ## Changelog
+
+### [0.1.21] - 5/24/2021
+
+***Changed***
+
+- Updated example code in `README`.
+- Changed main path from `dist/index.js` to `./dist/index.js`in `package.json`.
+- Changed types path from `dist/index.d.ts` to `./dist/index.d.ts` in `package.json`.
 
 ### [0.1.20] - 5/22/2021
 
