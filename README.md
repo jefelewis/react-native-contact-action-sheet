@@ -54,7 +54,7 @@ npm i react-native-contact-action-sheet
 
 **2. Install additional dependencies:**
 
-**Note:** This NPM Package uses the native module [`react-native-vector-icons`](https://github.com/oblador/react-native-vector-icons), so it must be installed in your project.
+**Note:** This NPM Package uses the [Native Module](https://reactnative.dev/docs/native-modules-intro) [`react-native-vector-icons`](https://github.com/oblador/react-native-vector-icons), so it must be installed in your project.
 
 ```
 npm i react-native-vector-icons
