@@ -38,10 +38,10 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorSingleDark : styles.contactSelectorSingleLight} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
 
-              <>
+              <View>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </>
+              </View>
             </TouchableOpacity>
           );
         };
@@ -51,10 +51,10 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorFirstDark : styles.contactSelectorFirstLight} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
 
-              <>
+              <View>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </>
+              </View>
             </TouchableOpacity>
           );
         };
@@ -69,10 +69,10 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorDark : styles.contactSelectorLight} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
 
-              <>
+              <View>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </>
+              </View>
             </TouchableOpacity>
           );
         };
@@ -83,10 +83,10 @@ const ContactActionSheet: React.FC<Props> = (props): JSX.Element => {
             <TouchableOpacity key={i} style={props.darkMode ? styles.contactSelectorLastDark : styles.contactSelectorLastLight} onPress={() => callEmail(contact)}>
               <Icon name={String(renderIcon(contact))} size={27} style={props.darkMode ? styles.iconDark : styles.iconLight} color="#323232" />
 
-              <>
+              <View>
                 <Text style={props.darkMode ? styles.contactTitleDark : styles.contactTitleLight}>{contact.title}</Text>
                 <Text style={props.darkMode ? styles.emailPhoneTextDark : styles.emailPhoneTextLight} numberOfLines={1}>{contact.contact}</Text>
-              </>
+              </View>
             </TouchableOpacity>
           );
         }
