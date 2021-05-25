@@ -28,8 +28,7 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "react-native-vector-icons": "*"
+    "react-native": "*"
   },
   "dependencies": {
     "react-native-iphone-x-helper": "^1.3.1",
