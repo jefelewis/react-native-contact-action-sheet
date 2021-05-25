@@ -172,6 +172,12 @@ npm publish
 
 ## Changelog
 
+### [1.0.0] - 5/24/2021
+
+***Added***
+
+- Added `LICENSE`.
+
 ### [0.1.28] - 5/24/2021
 
 ***Added***
