@@ -169,6 +169,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.26] - 5/24/2021
+
+***Removed***
+
+- Removed `react-native-vector-icons` from `peerDependency`.
+
 ### [0.1.25] - 5/24/2021
 
 ***Changed***
