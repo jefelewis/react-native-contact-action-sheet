@@ -171,6 +171,10 @@ npm publish
 
 ### [0.1.27] - 5/24/2021
 
+***Added***
+
+- Added `react-native-vector-icons` from `peerDependency`.
+
 ***Removed***
 
 - Fixed `<View>` issue.
@@ -200,7 +204,7 @@ npm publish
 
 ### [0.1.23] - 5/24/2021
 
-***Changed***
+***Added***
 
 - Added `RNVectorIcons.podspec` to `src`.
 
