@@ -169,6 +169,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.27] - 5/24/2021
+
+***Removed***
+
+- Fixed `<View>` issue.
+
 ### [0.1.26] - 5/24/2021
 
 ***Removed***
