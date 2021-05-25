@@ -169,6 +169,12 @@ npm publish
 
 ## Changelog
 
+### [0.1.28] - 5/24/2021
+
+***Added***
+
+- Added styling to `ContactActionSheet`.
+
 ### [0.1.27] - 5/24/2021
 
 ***Added***
